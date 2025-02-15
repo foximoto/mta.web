@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import JoinMta from "@/components/JoinMta";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import React from "react";
@@ -35,6 +36,7 @@ function AboutUs() {
           Motorcycle Tourer’s Association also has elevated membership status
           based on travel accomplishments.
         </div>
+        <JoinMta />
       </div>
       <Footer />
     </div>

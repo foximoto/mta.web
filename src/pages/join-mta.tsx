@@ -16,10 +16,10 @@ function JoinMta() {
         we do! We ride not only to support our group but to assist other
         organization. <br /> <br /> If you are here for the sole reason of
         supporting motorcycle tourers then this is your association! We are
-        looking for active participants in supporting rider's issues, not patch
+        looking for active participants in supporting riders issues, not patch
         hunters that do not believe in our mission.
         <br /> <br />
-        <b>Please take time to read the MTA's Rules.</b> <br />
+        <b>Please take time to read the MTAs Rules.</b> <br />
         <div className="text-3xl font-semibold mt-6">Rules</div>
         <ol className="list-decimal list-inside ">
           <li>
@@ -41,7 +41,7 @@ function JoinMta() {
           </li>
           <li> You should have valid PERSONAL ACCIDENT INSURANCE POLICY. </li>
           <li>
-            Doesn't encourage any kind of racing, stunts, or rash driving.MTA's
+            Doesnt encourage any kind of racing, stunts, or rash driving.MTAs
             objective is to promote safe motorcycle riding.
           </li>
           <li>

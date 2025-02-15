@@ -45,7 +45,7 @@ function Navbar() {
               </details>
             </li>
             <li>
-              <a>Blogs</a>
+              <Link href={"/blogs"}>Blogs</Link>
             </li>
             <li>
               <Link href={"/contact-us"}>Contact Us</Link>

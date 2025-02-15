@@ -6,7 +6,7 @@ import React from "react";
 
 function Members() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto ">
       <Navbar />
       <PageHeader heading="Members" />
       <MemberShipRow heading="Core Team" />

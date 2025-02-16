@@ -14,7 +14,7 @@ function blogs() {
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
           <Link key={i} href={"blog-view"}>
             <div className="p-2">
-              <div className="card bg-base-100 shadow-xl">
+              <div className="card bg-base-100 rounded-none shadow-xl">
                 <figure>
                   <img
                     src="https://images.pexels.com/photos/5238634/pexels-photo-5238634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

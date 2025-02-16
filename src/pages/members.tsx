@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import JoinMta from "@/components/JoinMta";
 import MemberShipRow from "@/components/MemberShipRow";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
@@ -12,6 +13,7 @@ function Members() {
       <MemberShipRow heading="Core Team" />
       <MemberShipRow heading="Executive Members" />
       <MemberShipRow heading="Members" />
+      <JoinMta />
       <Footer />
     </div>
   );

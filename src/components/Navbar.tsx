@@ -33,13 +33,13 @@ function Navbar() {
                 <summary>What we do ?</summary>
                 <ul className="bg-base-100 rounded-t-none p-2">
                   <li>
-                    <a>Rides</a>
+                    <Link href={"/rides"}>Rides</Link>
                   </li>
                   <li>
-                    <a>Events</a>
+                    <Link href={"/events"}>Events</Link>
                   </li>
                   <li>
-                    <a>Moto Camp</a>
+                    <Link href={"/moto-camp"}>Moto Camp</Link>
                   </li>
                 </ul>
               </details>

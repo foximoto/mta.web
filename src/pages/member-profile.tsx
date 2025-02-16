@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React from "react";
@@ -15,6 +17,7 @@ function MemberProfile() {
       />
       <div className="flex justify-center items-center">
         <img
+          alt=""
           src="https://images.pexels.com/photos/1119796/pexels-photo-1119796.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           className="avatar w-60 h-60 rounded-full mt-[-120px] border-2 border-white object-cover"
         />
@@ -28,10 +31,10 @@ function MemberProfile() {
           <div className="mt-4 text-xl leading-relaxed">
             John Doe is an International Certified Long Distance Rider /
             Motorcycle Tourer & India book of records Holder from Calicut in
-            God's Own Country.He has spent more than 2 decades behind the
+            Gods Own Country.He has spent more than 2 decades behind the
             handlebar.He has travelled the length and breadth of India.He
             conquered the Mighty Khardung La 15 times and completed Iron Butt
-            Association's Challenge 5 times.He completed many Motorcycle
+            Associations Challenge 5 times.He completed many Motorcycle
             Challenge Rides.He is an active Member of MTA
           </div>
         </div>

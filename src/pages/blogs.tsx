@@ -10,7 +10,7 @@ function blogs() {
     <div className="container mx-auto">
       <Navbar />
       <PageHeader heading="Blogs" />
-      <div className="grid grid-cols-4 mb-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 mb-10">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
           <Link key={i} href={"blog-view"}>
             <div className="p-2">

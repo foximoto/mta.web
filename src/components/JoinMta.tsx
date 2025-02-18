@@ -4,7 +4,7 @@ import React from "react";
 
 function JoinMta() {
   return (
-    <div className="py-10 grid grid-cols-2">
+    <div className="py-10 grid md:grid-cols-2">
       <div>
         <img
           src="https://images.pexels.com/photos/22129752/pexels-photo-22129752/free-photo-of-motorcycles-parked-along-a-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

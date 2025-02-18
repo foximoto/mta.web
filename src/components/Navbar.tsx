@@ -1,58 +1,64 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function Navbar() {
   return (
     <div>
-      <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <Link href={"/"} className="text-xl">
-            MTA India
-          </Link>
+      <div className="pt-4 flex items-center justify-center gap-4">
+        <Image alt="" width={100} height={100} src="/mta-logo.png" />
+        <div className="text-3xl font-bold">
+          Motorcycle Tourers <br /> Association
         </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
+      </div>
+      <div className="py-6 flex justify-center items-center flex-wrap">
+        <Link href={"/"}>
+          <button className="btn btn-ghost">Home</button>
+        </Link>
+
+        <div className="dropdown dropdown-hover ">
+          <div tabIndex={0} role="button" className="btn m-1">
+            Who we are ?
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+          >
             <li>
-              <Link href={"/"}>Home</Link>
+              <Link href={"/about-us"}>About us</Link>
             </li>
             <li>
-              <details>
-                <summary>Who We Are ?</summary>
-                <ul className="bg-base-100 rounded-t-none p-2">
-                  <li>
-                    <Link href={"/about-us"}>About Us</Link>
-                  </li>
-                  <li>
-                    <Link href={"/members"}>Members</Link>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>What we do ?</summary>
-                <ul className="bg-base-100 rounded-t-none p-2">
-                  <li>
-                    <Link href={"/rides"}>Rides</Link>
-                  </li>
-                  <li>
-                    <Link href={"/events"}>Events</Link>
-                  </li>
-                  <li>
-                    <Link href={"/moto-camp"}>Moto Camp</Link>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <Link href={"/blogs"}>Blogs</Link>
-            </li>
-            <li>
-              <Link href={"/contact-us"}>Contact Us</Link>
+              <Link href={"/members"}>Members</Link>
             </li>
           </ul>
         </div>
+        <div className="dropdown dropdown-hover bg-white">
+          <div tabIndex={0} role="button" className="btn m-1">
+            What we do ?
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+          >
+            <li>
+              <Link href={"/rides"}>Rides</Link>
+            </li>
+            <li>
+              <Link href={"/events"}>Events</Link>
+            </li>
+          </ul>
+        </div>
+        <Link href={"/moto-camp"}>
+          <button className="btn btn-ghost">MotoCamp</button>
+        </Link>
+        <Link href={"/blogs"}>
+          <button className="btn btn-ghost">Blogs</button>
+        </Link>
+        <Link href={"/contact-us"}>
+          <button className="btn btn-ghost">Contact us</button>
+        </Link>
       </div>
+      <hr />
     </div>
   );
 }

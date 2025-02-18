@@ -8,7 +8,7 @@ function AboutUs() {
   return (
     <div className="container mx-auto">
       <Navbar />
-      <div className="py-20">
+      <div className="py-6">
         <PageHeader heading="About Us" />
         <div className="text-lg leading-[30px] mt-4">
           The Motorcycle Tourer’s Association(MTA)was formally established on

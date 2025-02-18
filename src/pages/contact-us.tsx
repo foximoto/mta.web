@@ -8,14 +8,14 @@ function ContactUs() {
     <div className="container mx-auto">
       <Navbar />
       <PageHeader heading="Contact Us" />
-      <div className="grid grid-cols-2 py-20">
+      <div className="grid md:grid-cols-2 px-2 py-10">
         <div className="text-2xl leading-relaxed">
           Motorcycle Tourers Association <br /> 9/953D, Sajas Sameer Building{" "}
           <br />
           K.P Kesava Menon Road <br /> Poovalappu <br /> Calicut, Kerala <br />
           PIN:673001
         </div>
-        <div>
+        <div className="mt-10 md:mt-0">
           <label className="input input-bordered flex items-center gap-2">
             Name
             <input type="text" className="grow" />

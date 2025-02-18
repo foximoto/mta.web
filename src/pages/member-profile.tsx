@@ -22,13 +22,35 @@ function MemberProfile() {
           className="avatar w-60 h-60 rounded-full mt-[-120px] border-2 border-white object-cover"
         />
       </div>
-
-      <div className="flex justify-center items-center pb-10">
-        <div className="w-2/3 mx-auto">
-          <div className="text-3xl font-semibold text-center mt-6">
-            John Doe
+      <div className="text-3xl font-semibold text-center mt-6">John Doe</div>
+      <div className="w-2/3 mx-auto grid grid-cols-3 my-10">
+        <div className="col-span-1 text-xl px-4">
+          <div className="text-2xl font-semibold">Details</div>
+          <div>
+            Road Name: <span className="font-semibold">Rider Mind</span> <br />
+            Years of Experience: <span className="font-semibold">3</span> <br />
+            Ride Type: <span className="font-semibold">
+              Off-Road, enduro
+            </span>{" "}
+            <br />
           </div>
-          <div className="mt-4 text-xl leading-relaxed">
+
+          <div className="text-2xl font-semibold mt-4">Social</div>
+          <div>
+            <a href="#">Instagram-username</a>
+          </div>
+
+          <div className="text-2xl font-semibold mt-4">Motorcycle</div>
+          <div>
+            <img
+              src="https://images.pexels.com/photos/2393818/pexels-photo-2393818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt=""
+            />
+            <div>Royal Enfield Classic 350</div>
+          </div>
+        </div>
+        <div className="col-span-2 px-4 ">
+          <div className=" text-xl leading-relaxed">
             John Doe is an International Certified Long Distance Rider /
             Motorcycle Tourer & India book of records Holder from Calicut in
             Gods Own Country.He has spent more than 2 decades behind the
@@ -37,10 +59,31 @@ function MemberProfile() {
             Associations Challenge 5 times.He completed many Motorcycle
             Challenge Rides.He is an active Member of MTA
           </div>
+
+          <div className="text-2xl font-semibold mt-6">Achievements</div>
+          <div className="flex flex-row items-center gap-8 flex-wrap mt-4">
+            {[1, 2, 3, 4].map((obj) => {
+              return (
+                <div key={obj}>
+                  <img
+                    src="https://longdistanceriders.net/wp-content/uploads/2015/06/500.gif"
+                    alt=""
+                    className="w-40 h-40 rounded-full object-cover"
+                  />
+                  <div className="text-center text-sm font-semibold mt-2">
+                    SaddelSore 1000
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-2xl font-semibold mt-6">Rider map</div>
+          <img
+            src="https://images.pexels.com/photos/1098515/pexels-photo-1098515.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+          />
         </div>
-      </div>
-      <div className="w-2/3 mx-auto pb-20">
-        <div className="text-3xl font-semibold">Achievements</div>
       </div>
 
       <Footer />

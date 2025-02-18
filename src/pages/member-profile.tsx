@@ -37,7 +37,8 @@ function MemberProfile() {
 
           <div className="text-2xl font-semibold mt-4">Social</div>
           <div>
-            <a href="#">Instagram-username</a>
+            <a href="#">Instagram-username</a> <br />
+            <a href="#">Twitter-username</a>
           </div>
 
           <div className="text-2xl font-semibold mt-4">Motorcycle</div>

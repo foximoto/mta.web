@@ -10,7 +10,7 @@ function AboutUs() {
       <Navbar />
       <div className="py-6">
         <PageHeader heading="About Us" />
-        <div className="text-lg leading-[30px] mt-4">
+        <div className="text-lg leading-[30px] mt-4 p-2 md:p-5 text-justify">
           The Motorcycle Tourer’s Association(MTA)was formally established on
           21stJune 2018 (World’s Motorcycle Day) in Calicut, Kerala with the
           support of fellow Long Distance Riders.The Motorcycle Tourer’s

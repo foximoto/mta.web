@@ -27,7 +27,7 @@ function CommunitySpotlight() {
           </div>
         ))}
         <Link
-          href={"/"}
+          href={"/hall-of-fame"}
           className="card bg-base-100 shadow-xl flex justify-center items-center rounded-none"
         >
           <div className="text-xl font-semibold text-center">

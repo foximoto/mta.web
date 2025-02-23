@@ -51,6 +51,12 @@ function Navbar() {
         <Link href={"/moto-camp"}>
           <button className="btn btn-ghost">MotoCamp</button>
         </Link>
+        <Link href={"/calendar"}>
+          <button className="btn btn-ghost">Calendar</button>
+        </Link>
+        <Link href={"/gallery"}>
+          <button className="btn btn-ghost">Gallery</button>
+        </Link>
         <Link href={"/blogs"}>
           <button className="btn btn-ghost">Blogs</button>
         </Link>

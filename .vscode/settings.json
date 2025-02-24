@@ -25,5 +25,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.iconTheme": "material-icon-theme",
-  "cSpell.words": ["Moto"]
+  "cSpell.words": ["HYGRAPH", "Moto"]
 }

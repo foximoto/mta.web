@@ -12,9 +12,9 @@ function JoinMta() {
           className="h-[400px] w-full object-cover"
         />
       </div>
-      <div className="p-4 flex flex-col justify-center items-center">
+      <div className="p-1 md:p-4 flex flex-col justify-center items-center mt-3 mt-md-0">
         <div className="text-4xl font-semibold text-center">Join MTA</div>
-        <p className="mb-5 w-2/3 mx-auto mt-4">
+        <p className="mb-5 w-md-2/3 mx-auto mt-4 w-100 text-justify p-2 md:p-0">
           Would you like to become a member of elite this motorcycle group? If
           you are a long distance motorcycle riding addict, you’ve come to the
           right place. Then welcome to the world of Motorcycle Tourers.

@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div>
-      <footer className="footer text-base-content bg-base-200 p-10">
+      <footer className="footer text-base-content bg-base-200 md:p-10 p-2 flex justify-between">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -26,7 +26,7 @@ function Footer() {
         </nav>
       </footer>
       <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
-        <aside className="grid-flow-col items-center">
+        <aside className="grid-flow-col items-center justify-self-center md:justify-self-start">
           <svg
             width="24"
             height="24"
@@ -44,7 +44,7 @@ function Footer() {
             Providing reliable tech since 1992
           </p>
         </aside>
-        <nav className="md:place-self-center md:justify-self-end">
+        <nav className="md:place-self-center md:justify-self-end  justify-self-center">
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg

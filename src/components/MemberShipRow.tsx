@@ -15,10 +15,12 @@ interface Props {
 const MemberShipRow: FC<Props> = ({ heading }) => {
   return (
     <div className="mb-10">
-      <div className="text-4xl font-semibold"> {heading}</div>
-      <div className="flex flex-row flex-wrap gap-4 mt-4">
-        {[1, 2, 3].map((obj) => {
-          return (
+      <div className="text-4xl font-semibold mb-5">{heading}</div>
+
+      {/* Scrollable container for small screens */}
+      <div className="overflow-x-auto md:overflow-hidden mt-4">
+        <div className="flex flex-nowrap gap-4 w-max">
+          {[1, 2, 3].map((obj) => (
             <Link key={obj} href={"/member-profile"}>
               <div className="flex flex-col justify-center items-center">
                 <img
@@ -26,16 +28,11 @@ const MemberShipRow: FC<Props> = ({ heading }) => {
                   className="avatar w-40 h-40 rounded-full"
                 />
                 <div className="text-xl font-semibold">John Deo</div>
-                <div
-                  className="
-                text-xs"
-                >
-                  insta_id
-                </div>
+                <div className="text-xs">insta_id</div>
               </div>
             </Link>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

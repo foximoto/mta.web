@@ -4,10 +4,10 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div>
+    <div className="">
       <div className="pt-4 flex items-center justify-center gap-4">
         <Image alt="" width={100} height={100} src="/mta-logo.png" />
-        <div className="text-3xl font-bold">
+        <div className="text-xl font-bold md-text-3xl">
           Motorcycle Tourers <br /> Association
         </div>
       </div>
@@ -16,13 +16,13 @@ function Navbar() {
           <button className="btn btn-ghost">Home</button>
         </Link>
 
-        <div className="dropdown dropdown-hover ">
+        <div className="dropdown dropdown-hover relative">
           <div tabIndex={0} role="button" className="btn m-1">
             Who we are ?
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow absolute left-0 right-0 max-w-full"
           >
             <li>
               <Link href={"/about-us"}>About us</Link>
@@ -32,13 +32,13 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="dropdown dropdown-hover bg-white">
+        <div className="dropdown dropdown-hover bg-white relative">
           <div tabIndex={0} role="button" className="btn m-1">
             What we do ?
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow absolute left-0 right-0 max-w-full"
           >
             <li>
               <Link href={"/rides"}>Rides</Link>

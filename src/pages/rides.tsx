@@ -9,22 +9,27 @@ function Rides() {
     <div className="container mx-auto">
       <Navbar />
       <PageHeader heading="Rides" />
+
       <div className="py-10">
-        <div className="flex flex-row flex-wrap gap-6">
-          {[1, 2, 3, 4].map((obj) => {
-            return (
-              <Link href={"/ride-detail"} key={obj}>
-                <img
-                  src="https://longdistanceriders.net/wp-content/uploads/2015/06/500.gif"
-                  alt=""
-                  className="w-40 h-40 rounded-full object-cover"
-                />
-                <div className="text-center mt-2">
-                  Ride name <br /> Year
-                </div>
-              </Link>
-            );
-          })}
+        <div className="overflow-x-auto md:overflow-hidden">
+          <div className="flex flex-nowrap md:flex-wrap gap-6 w-max md:w-auto">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((obj) => {
+              return (
+                <Link href={"/ride-detail"} key={obj} className="shrink-0">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="https://longdistanceriders.net/wp-content/uploads/2015/06/500.gif"
+                      alt=""
+                      className="w-40 h-40 rounded-full object-cover"
+                    />
+                    <div className="text-center mt-2">
+                      Ride name <br /> Year
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
 

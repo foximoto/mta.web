@@ -45,6 +45,9 @@ function Footer() {
             <a href="https://www.instagram.com/motorcycletourersassociation">
               <img src="/icons/instagram.svg" alt="" />
             </a>
+            <a href="https://www.facebook.com/motorcycletourersassociation">
+              <img src="/icons/facebook.svg" alt="" />
+            </a>
           </div>
         </nav>
       </footer>

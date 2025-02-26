@@ -1,4 +1,8 @@
-import { hallOfFameListQuery, rideListQuery } from "@/query/service";
+import {
+  hallOfFameListQuery,
+  rideDetailsQuery,
+  rideListQuery,
+} from "@/query/service";
 import { HYGRAPH_ENDPOINT } from "../../env";
 import axios from "axios";
 
@@ -17,8 +21,16 @@ export const useServices = () => {
     return response.data;
   };
 
+  const getRideDetails = async (slug: string) => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${rideDetailsQuery(slug)}`
+    );
+    return response.data;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
+    getRideDetails,
   };
 };

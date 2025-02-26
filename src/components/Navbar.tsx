@@ -1,17 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 
 function Navbar() {
   return (
     <div className="">
       <div className="pt-4 flex items-center justify-center gap-4">
-        <Image alt="" width={100} height={100} src="/mta-logo.png" />
-        <div className="text-xl font-bold md-text-3xl">
-          Motorcycle Tourers <br /> Association
+        <Image alt="" width={140} height={140} src="/MTA LOGO.png" />
+        <div className="text-5xl font-bold md-text-3xl uppercase">
+          Motorcycle Tourers Association
         </div>
       </div>
-      <div className="py-6 flex justify-center items-center flex-wrap">
+      {/* <div className="py-6 flex justify-center items-center flex-wrap">
         <Link href={"/"}>
           <button className="btn btn-ghost">Home</button>
         </Link>
@@ -63,8 +61,8 @@ function Navbar() {
         <Link href={"/contact-us"}>
           <button className="btn btn-ghost">Contact us</button>
         </Link>
-      </div>
-      <hr />
+      </div> */}
+      <hr className="mt-10" />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React from "react";
@@ -9,7 +8,7 @@ function MemberProfile() {
     <div className="container mx-auto">
       <Navbar />
       <div
-        className="hero h-[400px]"
+        className="hero h-[400px] bg-cover bg-center"
         style={{
           backgroundImage:
             "url(https://images.pexels.com/photos/5205083/pexels-photo-5205083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
@@ -23,8 +22,8 @@ function MemberProfile() {
         />
       </div>
       <div className="text-3xl font-semibold text-center mt-6">John Doe</div>
-      <div className="w-2/3 mx-auto grid grid-cols-3 my-10">
-        <div className="col-span-1 text-xl px-4">
+      <div className="w-full md:w-2/3 mx-auto grid grid-cols-1 md:grid-cols-3 my-10">
+        <div className="text-xl px-4 md:col-span-1">
           <div className="text-2xl font-semibold">Details</div>
           <div>
             Road Name: <span className="font-semibold">Rider Mind</span> <br />
@@ -50,8 +49,8 @@ function MemberProfile() {
             <div>Royal Enfield Classic 350</div>
           </div>
         </div>
-        <div className="col-span-2 px-4 ">
-          <div className=" text-xl leading-relaxed">
+        <div className="px-4 md:col-span-2">
+          <div className="text-xl leading-relaxed">
             John Doe is an International Certified Long Distance Rider /
             Motorcycle Tourer & India book of records Holder from Calicut in
             Gods Own Country.He has spent more than 2 decades behind the
@@ -62,27 +61,31 @@ function MemberProfile() {
           </div>
 
           <div className="text-2xl font-semibold mt-6">Achievements</div>
-          <div className="flex flex-row items-center gap-8 flex-wrap mt-4">
-            {[1, 2, 3, 4].map((obj) => {
-              return (
-                <div key={obj}>
-                  <img
-                    src="https://longdistanceriders.net/wp-content/uploads/2015/06/500.gif"
-                    alt=""
-                    className="w-40 h-40 rounded-full object-cover"
-                  />
-                  <div className="text-center text-sm font-semibold mt-2">
-                    SaddelSore 1000
+          {/* Wrapper to enable horizontal scroll on mobile */}
+          <div className="overflow-x-auto md:overflow-visible mt-4">
+            <div className="flex flex-row items-center gap-8 flex-wrap">
+              {[1, 2, 3, 4].map((obj) => {
+                return (
+                  <div key={obj}>
+                    <img
+                      src="https://longdistanceriders.net/wp-content/uploads/2015/06/500.gif"
+                      alt=""
+                      className="w-40 h-40 rounded-full object-cover"
+                    />
+                    <div className="text-center text-sm font-semibold mt-2">
+                      SaddelSore 1000
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
           <div className="text-2xl font-semibold mt-6">Rider map</div>
           <img
             src="https://images.pexels.com/photos/1098515/pexels-photo-1098515.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt=""
+            className="w-full"
           />
         </div>
       </div>

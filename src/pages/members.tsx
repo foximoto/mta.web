@@ -22,7 +22,7 @@ function Members() {
               name: "VEPAVI",
               designation: "FOUNDER | SECRETARY",
               instagram_handle: "vepavicalicutchoppers",
-              profile_url: "/vapavi.png",
+              profile_url: "/vapavi.jpeg",
             },
             {
               name: "SADIQ",

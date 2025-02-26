@@ -26,7 +26,7 @@ const MemberShipRow: FC<Props> = ({ heading, data }) => {
                 <div className="flex flex-col justify-center items-center">
                   <img
                     src={obj.profile_url}
-                    className="avatar w-40 h-40 rounded-full"
+                    className="avatar w-40 h-40 rounded-full object-cover"
                   />
                   <div className="text-xl font-semibold">{obj.name}</div>
                   <div className="text-sm font-semibold">{obj.designation}</div>

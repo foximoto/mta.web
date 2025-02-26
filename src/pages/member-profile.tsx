@@ -11,14 +11,14 @@ function MemberProfile() {
         className="hero h-[400px] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(https://images.pexels.com/photos/5205083/pexels-photo-5205083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
+            "url(https://i.ibb.co/cXQJcM0S/Whats-App-Image-2025-02-27-at-12-33-12-AM.jpg)",
         }}
       />
       <div className="flex justify-center items-center">
         <img
           alt=""
-          src="/vapavi.png"
-          className="avatar w-60 h-60 rounded-full mt-[-120px] border-2 border-white object-cover"
+          src="/vapavi.jpeg"
+          className="avatar w-60 h-60 rounded-full mt-[-120px] border-2 border-white object-cover "
         />
       </div>
       <div className="text-3xl font-semibold text-center mt-6">VEPAVI</div>
@@ -56,7 +56,7 @@ function MemberProfile() {
             Achievements
           </div>
 
-          <ul className="list-disc list-outside mt-4 text-xl">
+          <ul className="list-disc list-outside mt-4 text-xl px-3">
             <li className="mb-1">
               He conducted 3 India Book of Records and 1 Asia Book of Records
               rides for Motorcycle Tourers Association.

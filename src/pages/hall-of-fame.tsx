@@ -1,9 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import React from "react";
+import { useServices } from "@/hooks/useServices";
+import { useEffect } from "react";
 
-function HallOfFame() {
+const HallOfFame = () => {
+  const { getHallOfFameList } = useServices();
+  const fetchData = getHallOfFameList();
+
+  useEffect(() => {
+    fetchData.then((response) => {
+      console.log(response);
+    });
+  }, []);
+
   return (
     <div className="container mx-auto">
       <Navbar />
@@ -11,6 +22,6 @@ function HallOfFame() {
       <Footer />
     </div>
   );
-}
+};
 
 export default HallOfFame;

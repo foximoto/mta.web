@@ -65,3 +65,17 @@ export const membersQuery = encodeURIComponent(`
 }
 }
 `);
+
+export const getCalendarQuery = (startDate: string, endDate: string) => {
+  return encodeURIComponent(`
+    query {
+       calendars(where: { 
+    date_gt: "${startDate}", 
+    date_lt: "${endDate}" 
+  }) {
+    date
+    rideName
+  }
+  }
+  `);
+};

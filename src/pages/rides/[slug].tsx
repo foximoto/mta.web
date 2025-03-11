@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
@@ -33,7 +34,6 @@ function RideDetail() {
         <div className="w-2/3 mx-auto pb-20">
           <PageHeader heading={rideData?.rideName} />
           <Markdown>{rideData?.details}</Markdown>
-          <button className="btn mx-auto">Register Now</button>
         </div>
       )}
 

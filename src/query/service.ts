@@ -52,3 +52,16 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
 }
 }
 `);
+
+export const membersQuery = encodeURIComponent(`
+  query {
+    membersList(where:{memberType:member}){
+  name,
+  userName,
+  profileImage{
+    url
+  }
+  designation
+}
+}
+`);

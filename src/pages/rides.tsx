@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
@@ -25,7 +26,7 @@ function Rides() {
         <div className="overflow-x-auto md:overflow-hidden">
           <div className="flex flex-nowrap md:flex-wrap gap-6 w-max md:w-auto">
             {rideList?.data?.ridesList
-              ?.sort((a, b) => a?.order > b?.order)
+              ?.sort((a, b) => Number(a.order) - Number(b.order))
               .map((obj) => {
                 return (
                   <Link

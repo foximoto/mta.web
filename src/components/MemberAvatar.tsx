@@ -17,16 +17,16 @@ const MemberAvatar: FC<Props> = ({
 }) => {
   return (
     <div>
-      <Link href={"/member-profile"} id="RouterNavLink">
+      <Link href={`profile/${instagram_handle}`} id="RouterNavLink">
         <div className="flex flex-col justify-center items-center">
           <img
-            src={profile_url}
+            src={profile_url || "/placeholder.png"}
             className="avatar w-40 h-40 rounded-full object-cover"
             alt=""
           />
           <div className="text-xl font-semibold">{name}</div>
           <div className="text-sm font-semibold">{designation}</div>
-          <div className="flex items-center justify-center mt-2">
+          <div className="flex items-center justify-center mt-2 gap-1">
             <img src="/icons/instagram.svg" className="w-4 h-4" alt="" />
             <div className="text-xs">{instagram_handle}</div>
           </div>

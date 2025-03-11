@@ -17,7 +17,7 @@ function MemberProfile() {
       <div className="flex justify-center items-center">
         <img
           alt=""
-          src="/vapavi.jpeg"
+          src="/placeholder.png"
           className="avatar w-60 h-60 rounded-full mt-[-120px] border-2 border-white object-cover "
         />
       </div>

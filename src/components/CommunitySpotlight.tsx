@@ -4,13 +4,13 @@ import React from "react";
 
 function CommunitySpotlight() {
   return (
-    <div>
+    <div className="pb-10">
       <div className="text-4xl font-semibold mb-4 text-center">
         Hall of Fame
       </div>
 
       <div className="overflow-x-auto">
-        <div className="flex space-x-4 w-max">
+        <div className="grid grid-cols-5">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="w-[250px] flex-shrink-0">
               <div className="card rounded-none bg-base-100 shadow-xl">

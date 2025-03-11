@@ -1,20 +1,16 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "@/components/Footer";
-import Spotlight from "@/components/Spotlight";
-import JoinMta from "@/components/JoinMta";
-import Sponsors from "@/components/Sponsors";
 import CommunitySpotlight from "@/components/CommunitySpotlight";
+import Footer from "@/components/Footer";
+import JoinMta from "@/components/JoinMta";
+import Spotlight from "@/components/Spotlight";
+import Navbar from "../components/Navbar";
 
 function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto ">
       <Navbar />
-
       <Spotlight />
       <JoinMta />
       <CommunitySpotlight />
-      <Sponsors />
       <Footer />
     </div>
   );

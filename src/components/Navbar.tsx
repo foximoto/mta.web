@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Navbar() {
   return (
@@ -9,7 +10,7 @@ function Navbar() {
           Motorcycle Tourers Association
         </div>
       </div>
-      {/* <div className="py-6 flex justify-center items-center flex-wrap">
+      <div className="py-6 flex justify-center items-center flex-wrap">
         <Link href={"/"}>
           <button className="btn btn-ghost">Home</button>
         </Link>
@@ -30,7 +31,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="dropdown dropdown-hover bg-white relative">
+        <div className="dropdown dropdown-hover relative">
           <div tabIndex={0} role="button" className="btn m-1">
             What we do ?
           </div>
@@ -61,8 +62,8 @@ function Navbar() {
         <Link href={"/contact-us"}>
           <button className="btn btn-ghost">Contact us</button>
         </Link>
-      </div> */}
-      <hr className="mt-10" />
+      </div>
+      <hr />
     </div>
   );
 }

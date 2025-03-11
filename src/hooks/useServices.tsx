@@ -1,5 +1,7 @@
 import {
+  boardOfDirectorsQuery,
   hallOfFameListQuery,
+  membersQuery,
   rideDetailsQuery,
   rideListQuery,
 } from "@/query/service";
@@ -28,9 +30,25 @@ export const useServices = () => {
     return response.data;
   };
 
+  const getBoardOfDirectorsList = async () => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${boardOfDirectorsQuery}`
+    );
+    return response?.data?.data?.membersList;
+  };
+
+  const getMembersList = async () => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${membersQuery}`
+    );
+    return response?.data?.data?.membersList;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
     getRideDetails,
+    getBoardOfDirectorsList,
+    getMembersList,
   };
 };

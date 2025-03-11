@@ -20,3 +20,12 @@ export type rideDetailsType = {
   details: string;
   registrationOpen: boolean;
 };
+
+export type boardOfDirectorsType = {
+  name: string;
+  userName: string;
+  profileImage: {
+    url: string;
+  };
+  designation: string;
+};

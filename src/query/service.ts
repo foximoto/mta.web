@@ -39,3 +39,29 @@ export const rideDetailsQuery = (slug: string) => {
   }
   `);
 };
+
+export const boardOfDirectorsQuery = encodeURIComponent(`
+  query {
+    membersList(where:{memberType:coreTeam}){
+  name,
+  userName,
+  profileImage{
+    url
+  }
+  designation
+}
+}
+`);
+
+export const membersQuery = encodeURIComponent(`
+  query {
+    membersList(where:{memberType:member}){
+  name,
+  userName,
+  profileImage{
+    url
+  }
+  designation
+}
+}
+`);

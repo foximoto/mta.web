@@ -1,8 +1,27 @@
 import Footer from "@/components/Footer";
+import MemberAvatar from "@/components/MemberAvatar";
 import MemberShipRow from "@/components/MemberShipRow";
 import Navbar from "@/components/Navbar";
+import { useServices } from "@/hooks/useServices";
+import { boardOfDirectorsType } from "@/types/service";
+import { useEffect, useState } from "react";
 
 function Members() {
+  const [boardOfDirectorsList, setBoardOfDirectorsList] =
+    useState<Array<boardOfDirectorsType>>();
+  const [membersList, setMembersList] = useState();
+
+  const { getBoardOfDirectorsList } = useServices();
+
+  useEffect(() => {
+    getBoardOfDirectorsList().then((response) => {
+      console.log(response?.data?.membersList);
+      setBoardOfDirectorsList(response);
+    });
+  }, []);
+
+  console.log(boardOfDirectorsList);
+
   return (
     <div className="container mx-auto">
       <Navbar />
@@ -10,72 +29,20 @@ function Members() {
         <div className="text-4xl font-semibold my-20 text-center">
           BOARD OF DIRECTORS
         </div>
-        <MemberShipRow
-          data={[
-            {
-              name: "JACKSON FERNANDEZ",
-              designation: "PRESIDENT",
-              instagram_handle: "jacksonfernandez58",
-              profile_url: "/achayan.png",
-            },
-            {
-              name: "VEPAVI",
-              designation: "FOUNDER | SECRETARY",
-              instagram_handle: "vepavicalicutchoppers",
-              profile_url: "/vapavi.jpeg",
-            },
-            {
-              name: "SADIQ",
-              designation: "TREASURER",
-              instagram_handle: "sadiq_solorider",
-              profile_url: "/sadiq.png",
-            },
-          ]}
-        />
-        <MemberShipRow
-          data={[
-            {
-              name: "ARAVIND",
-              designation: "VICE PRESIDENT",
-              instagram_handle: "iam_wanderlust98",
-              profile_url: "/aravind.png",
-            },
-            {
-              name: "SAMAR",
-              designation: "JOINT SECRETARY",
-              instagram_handle: "storm_shadow72",
-              profile_url: "/samar.png",
-            },
-            {
-              name: "VIVEK",
-              designation: "DIRECTOR",
-              instagram_handle: "vivek_wildrides",
-              profile_url: "/vivek.png",
-            },
-          ]}
-        />
-        <MemberShipRow
-          data={[
-            {
-              name: "ANJITH",
-              designation: "DIRECTOR",
-              instagram_handle: "rider_hulk_131",
-              profile_url: "/anjith.png",
-            },
-            {
-              name: "ANAND",
-              designation: "DIRECTOR",
-              instagram_handle: "driftking_kl01",
-              profile_url: "/anand.png",
-            },
-            {
-              name: ".......",
-              designation: "DIRECTOR",
-              instagram_handle: "instagram_handle",
-              profile_url: "/placeholder.png",
-            },
-          ]}
-        />
+        <div className="grid grid-cols-3 ">
+          {boardOfDirectorsList?.map((obj) => {
+            return (
+              <div key={obj.name}>
+                <MemberAvatar
+                  instagram_handle={obj.userName}
+                  name={obj.name}
+                  profile_url={obj.profileImage?.url}
+                  designation={obj.designation}
+                />
+              </div>
+            );
+          })}
+        </div>
 
         <div className="text-4xl font-semibold my-20 text-center">MEMBERS</div>
         <MemberShipRow

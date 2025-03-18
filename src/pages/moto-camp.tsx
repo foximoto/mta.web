@@ -1,13 +1,15 @@
 import Footer from "@/components/Footer";
+import MotoCampSpotlight from "@/components/MotoCampSpotlight";
 import Navbar from "@/components/Navbar";
-import PageHeader from "@/components/PageHeader";
-import React from "react";
 
 function MotoCap() {
   return (
     <div className="container mx-auto">
       <Navbar />
-      <PageHeader heading="Moto Camp" />
+      {/* <PageHeader heading="MOTO CAMP" /> */}
+
+      <MotoCampSpotlight />
+
       <Footer />
     </div>
   );

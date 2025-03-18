@@ -53,9 +53,6 @@ function Navbar() {
         <Link href={"/calendar"}>
           <button className="btn btn-ghost">Calendar</button>
         </Link>
-        <Link href={"/gallery"}>
-          <button className="btn btn-ghost">Gallery</button>
-        </Link>
         <Link href={"/blogs"}>
           <button className="btn btn-ghost">Blogs</button>
         </Link>

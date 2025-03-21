@@ -79,3 +79,18 @@ export const getCalendarQuery = (startDate: string, endDate: string) => {
   }
   `);
 };
+
+export const getEventsQuery = () => {
+  return encodeURIComponent(`
+    query {
+      eventsList {
+        eventName
+        date
+        coverImage {
+          url
+        }
+        description
+      }
+    }
+  `);
+};

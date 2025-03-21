@@ -34,3 +34,12 @@ export type calendarDataType = {
   date: string;
   rideName: string;
 };
+
+export type eventsDataType = {
+  eventName: string;
+  date: string;
+  coverImage: {
+    url: string;
+  };
+  description: string;
+};

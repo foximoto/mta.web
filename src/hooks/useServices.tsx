@@ -1,6 +1,7 @@
 import {
   boardOfDirectorsQuery,
   getCalendarQuery,
+  getEventsQuery,
   hallOfFameListQuery,
   membersQuery,
   rideDetailsQuery,
@@ -52,6 +53,13 @@ export const useServices = () => {
     return response.data?.data?.calendars;
   };
 
+  const getEventsList = async () => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${getEventsQuery()}`
+    );
+    return response?.data?.data?.eventsList;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
@@ -59,5 +67,6 @@ export const useServices = () => {
     getBoardOfDirectorsList,
     getMembersList,
     getCalendarDates,
+    getEventsList,
   };
 };

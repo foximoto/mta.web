@@ -47,9 +47,9 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <Link href={"/moto-camp"}>
+        {/* <Link href={"/moto-camp"}>
           <button className="btn btn-ghost">MotoCamp</button>
-        </Link>
+        </Link> */}
         <Link href={"/calendar"}>
           <button className="btn btn-ghost">Calendar</button>
         </Link>

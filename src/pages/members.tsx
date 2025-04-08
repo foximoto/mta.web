@@ -21,16 +21,14 @@ function Members() {
     });
   }, []);
 
-  console.log(boardOfDirectorsList);
-
   return (
     <div className="container mx-auto">
       <Navbar />
       <div className="p-2">
-        <div className="text-4xl font-semibold my-20 text-center">
+        <div className="text-4xl font-semibold my-10 md:my-15 lg:my-20 text-center">
           BOARD OF DIRECTORS
         </div>
-        <div className="grid grid-cols-3 ">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 ">
           {boardOfDirectorsList?.map((obj) => {
             return (
               <div key={obj.name} className="mb-10">
@@ -45,8 +43,10 @@ function Members() {
           })}
         </div>
 
-        <div className="text-4xl font-semibold my-20 text-center">MEMBERS</div>
-        <div className="flex flex-row flex-wrap justify-center gap-10">
+        <div className="text-4xl font-semibold mt-0 my-10 md:my-15 lg:my-20 text-center">
+          MEMBERS
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {membersList?.map((obj) => {
             return (
               <div key={obj.name} className="mb-10">

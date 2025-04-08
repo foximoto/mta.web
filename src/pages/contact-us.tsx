@@ -25,15 +25,15 @@ function ContactUs() {
             <input type="email" className="grow" />
           </label>
           <label className="form-control mt-4">
-            <div className="label">
+            {/* <div className="label">
               <span className="label-text text-base">Message</span>
-            </div>
+            </div> */}
             <textarea
               className="textarea textarea-bordered h-24"
               placeholder="Enter your message"
             ></textarea>
           </label>
-          <button className="btn w-full mt-4">Sent</button>
+          <button className="btn btn-primary  w-full mt-4">Sent</button>
         </div>
       </div>
       <Footer />

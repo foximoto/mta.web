@@ -5,14 +5,12 @@ import React from "react";
 function CommunitySpotlight() {
   return (
     <div className="pb-10">
-      <div className="text-4xl font-semibold mb-4 text-center">
-        Hall of Fame
-      </div>
+      <h2 className="text-4xl font-semibold mb-4 text-center">Hall of Fame</h2>
 
-      <div className="overflow-x-auto">
-        <div className="grid grid-cols-5">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="w-[250px] flex-shrink-0">
+      <div className="overflow-x-auto md:overflow-x-hidden">
+        <div className="flex space-x-4 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4">
+          {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+            <div key={i} className="w-[250px] md:w-full flex-shrink-0">
               <div className="card rounded-none bg-base-100 shadow-xl">
                 <figure>
                   <img
@@ -22,21 +20,21 @@ function CommunitySpotlight() {
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title">
+                  <h3 className="card-title">
                     MTA Member Completed Saddlesore 1000
-                  </h2>
+                  </h3>
                 </div>
               </div>
             </div>
           ))}
 
           <Link
-            href={"/"}
-            className="w-[250px] flex-shrink-0 card bg-base-100 shadow-xl flex justify-center items-center rounded-none p-4"
+            href="/"
+            className="w-[250px] md:w-full flex-shrink-0 card bg-base-100 shadow-xl flex justify-center items-center rounded-none p-4"
           >
-            <div className="text-xl font-semibold text-center">
+            <span className="text-xl font-semibold text-center">
               View <br /> Hall of Fame
-            </div>
+            </span>
           </Link>
         </div>
       </div>

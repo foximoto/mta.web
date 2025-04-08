@@ -3,12 +3,18 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <div className="">
+    <div>
       <div className="pt-4 flex items-center justify-center gap-4">
-        <Image alt="" width={140} height={140} src="/MTA LOGO.png" />
-        <div className="text-5xl font-bold md-text-3xl uppercase">
+        <Image
+          src="/MTA LOGO.png"
+          alt="MTA Logo"
+          width={140}
+          height={140}
+          className="w-[100px] h-[100px] md:w-[140px] md:h-[140px] object-contain"
+        />
+        <h1 className="text-xl md:text-5xl font-bold uppercase">
           Motorcycle Tourers Association
-        </div>
+        </h1>
       </div>
       <div className="py-6 flex justify-center items-center flex-wrap">
         <Link href={"/"}>

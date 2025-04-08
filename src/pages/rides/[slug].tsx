@@ -25,18 +25,15 @@ function RideDetail() {
     }
   }, []);
 
-  console.log(router.query.slug);
-
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto">
       <Navbar />
       {rideData && (
-        <div className="w-2/3 mx-auto pb-20">
-          <PageHeader heading={rideData?.rideName} />
-          <Markdown>{rideData?.details}</Markdown>
+        <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-20">
+          <PageHeader heading={rideData.rideName} />
+          <Markdown>{rideData.details}</Markdown>
         </div>
       )}
-
       <Footer />
     </div>
   );

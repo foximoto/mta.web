@@ -5,52 +5,55 @@ import React from "react";
 
 function JoinMta() {
   return (
-    <div className="container mx-auto">
+    <div>
       <Navbar />
       <PageHeader heading="Join MTA" />
-      <div className="w-2/3 mx-auto">
-        Hello, <br /> Thank you for your interest in joining the Motorcycle
-        Tourers Association. First, it should be known that we are NOT a
-        motorcycle club (M/C) and we have no desire to become one. We are a
-        Tourers Association that happens to enjoy riding motorcycles, and ride
-        we do! We ride not only to support our group but to assist other
-        organization. <br /> <br /> If you are here for the sole reason of
-        supporting motorcycle tourers then this is your association! We are
-        looking for active participants in supporting riders issues, not patch
-        hunters that do not believe in our mission.
-        <br /> <br />
-        <b>Please take time to read the MTAs Rules.</b> <br />
-        <div className="text-3xl font-semibold mt-6">Rules</div>
-        <ol className="list-decimal list-inside ">
+
+      <div className="w-[90%] mx-auto md:w-2/3">
+        <p className="mb-4">
+          Hello, <br /> Thank you for your interest in joining the Motorcycle
+          Tourers Association. First, it should be known that we are NOT a
+          motorcycle club (M/C) and we have no desire to become one. We are a
+          Tourers Association that happens to enjoy riding motorcycles, and ride
+          we do! We ride not only to support our group but to assist other
+          organization. <br /> <br /> If you are here for the sole reason of
+          supporting motorcycle tourers then this is your association! We are
+          looking for active participants in supporting riders issues, not patch
+          hunters that do not believe in our mission.
+        </p>
+
+        <p className="mb-4">
+          <strong>Please take time to read the MTA’s Rules.</strong>
+        </p>
+
+        <h2 className="text-3xl font-semibold mt-6">Rules</h2>
+        <ol className="list-decimal list-inside mb-6">
           <li>
-            It doesn’t matter whether you’re male or female.But you got to have
-            the passion traveling on Motorcycle.
+            It doesn’t matter whether you’re male or female, but you must have
+            the passion for traveling on a motorcycle.
           </li>
           <li>You should be above 21 years of age.</li>
           <li>You should have minimum 2 years riding experience.</li>
           <li>
-            You should have a valid Driving License which has not expired.{" "}
+            You should have a valid Driving License which has not expired.
           </li>
-          <li>
-            It doesn’t matter whether you’re male or female.But you got to have
-            the passion traveling on Motorcycle. should have a registered road
-            legal motorcycle.
-          </li>
+          <li>You should have a registered, road‑legal motorcycle.</li>
           <li>
             You should have valid Motorcycle Insurance and Emission Certificate.
           </li>
-          <li> You should have valid PERSONAL ACCIDENT INSURANCE POLICY. </li>
+          <li>You should have a valid PERSONAL ACCIDENT INSURANCE POLICY.</li>
           <li>
-            Doesnt encourage any kind of racing, stunts, or rash driving.MTAs
-            objective is to promote safe motorcycle riding.
+            We don’t encourage any kind of racing, stunts, or rash driving.
+            MTA’s objective is to promote safe motorcycle riding.
           </li>
           <li>
-            Consumption of Alcohol or any Intoxicating substance are not allowed
-            in ANY ride of Motorcycle Tourers Association.
+            Consumption of Alcohol or any intoxicating substance is not allowed
+            on any ride of Motorcycle Tourers Association.
           </li>
         </ol>
-        <div className="text-3xl font-semibold mt-6">Documents</div>
-        <ol className="list-decimal list-inside ">
+
+        <h2 className="text-3xl font-semibold mt-6">Documents</h2>
+        <ol className="list-decimal list-inside mb-6">
           <li>Original & Valid Driving Licence.</li>
           <li>Original Motorcycle Registration Certificate.</li>
           <li>Motorcycle Insurance Policy.</li>
@@ -58,48 +61,107 @@ function JoinMta() {
           <li>Emission Certificate.</li>
           <li>Personal Accident Insurance Policy.</li>
         </ol>
-        <div className="text-3xl font-semibold mt-6">Riding Gears</div>
-        <ol className="list-decimal list-inside ">
+
+        <h2 className="text-3xl font-semibold mt-6">Riding Gears</h2>
+        <ol className="list-decimal list-inside mb-6">
           <li>Protective Riding Jacket.</li>
           <li>Full Face ISI / DOT / ECE Certified Helmet.</li>
           <li>Protective Riding Gloves.</li>
           <li>Riding Boots / High Ankle Boots.</li>
           <li>Riding Pant / Thick Denim With Kneepad.</li>
         </ol>
-        <div className="mt-6">Be a Motorcycle Tourer Not Just A Rider!!</div>
-        <div>
-          <div className="text-3xl font-semibold mt-6">Application Form</div>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            Name
-            <input type="text" className="grow" />
-          </label>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            Contact Number
-            <input type="text" className="grow" />
-          </label>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            Email ID
-            <input type="email" className="grow" />
-          </label>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            Instagram Username
-            <input type="text" className="grow" />
-          </label>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            Vehicle Make and Model
-            <input type="text" className="grow" />
-          </label>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            Vehicle Registration Number
-            <input type="text" className="grow" />
-          </label>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            License Number
-            <input type="text" className="grow" />
-          </label>
-          <button className="btn my-6 w-full">Submit Application</button>
+
+        <p className="mb-6">Be a Motorcycle Tourer, Not Just A Rider!!</p>
+
+        <div className="mt-6">
+          <h2 className="text-3xl font-semibold mb-4">Application Form</h2>
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Contact Number</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Contact Number"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Email ID</span>
+              </label>
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Instagram Username</span>
+              </label>
+              <input
+                type="text"
+                placeholder="@username"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Vehicle Make & Model</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Make and Model"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Vehicle Registration #</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Registration Number"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+            <div className="form-control w-full md:col-span-2">
+              <label className="label">
+                <span className="label-text">License Number</span>
+              </label>
+              <input
+                type="text"
+                placeholder="License Number"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <button type="submit" className="btn btn-primary w-full mb-5">
+                Submit Application
+              </button>
+            </div>
+          </form>
         </div>
       </div>
+
       <Footer />
     </div>
   );

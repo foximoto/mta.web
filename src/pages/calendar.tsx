@@ -12,6 +12,7 @@ import moment from "moment";
 function Calendar() {
   const [events, setEvents] = useState<Array<calendarDataType>>();
   const { getCalendarDates } = useServices();
+
   useEffect(() => {
     getCalendarDates(
       moment().startOf("month").format("YYYY-MM-DD"),
@@ -20,24 +21,33 @@ function Calendar() {
       setEvents(response);
     });
   }, []);
+
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto">
       <Navbar />
       <PageHeader heading="Ride Calendar" />
-      <FullCalendar
-        plugins={[dayGridPlugin]}
-        events={events?.map((obj) => ({ title: obj.rideName, date: obj.date }))}
-        initialView="dayGridMonth"
-        datesSet={(payload) => {
-          getCalendarDates(
-            moment(payload.start).format("YYYY-MM-DD"),
-            moment(payload.end).format("YYYY-MM-DD")
-          ).then((response) => {
-            setEvents(response);
-          });
-          console.log(payload);
-        }}
-      />
+      {/* Responsive wrapper for FullCalendar */}
+      <div className="w-full px-4 py-5">
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          events={events?.map((obj) => ({
+            title: obj.rideName,
+            date: obj.date,
+          }))}
+          initialView="dayGridMonth"
+          contentHeight="auto"
+          height="auto"
+          datesSet={(payload) => {
+            getCalendarDates(
+              moment(payload.start).format("YYYY-MM-DD"),
+              moment(payload.end).format("YYYY-MM-DD")
+            ).then((response) => {
+              setEvents(response);
+            });
+            console.log(payload);
+          }}
+        />
+      </div>
       <Footer />
     </div>
   );

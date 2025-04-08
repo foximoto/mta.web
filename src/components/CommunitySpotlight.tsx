@@ -4,14 +4,14 @@ import React from "react";
 
 function CommunitySpotlight() {
   return (
-    <div className="pb-10">
+    <div className="pb-0">
       <h2 className="text-4xl font-semibold mb-4 text-center">Hall of Fame</h2>
 
-      <div className="overflow-x-auto md:overflow-x-hidden">
-        <div className="flex space-x-4 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4">
-          {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+      <div className="overflow-x-auto md:overflow-x-hidden py-5">
+        <div className="flex space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4">
+          {[1, 2, 3, 4].map((i) => (
             <div key={i} className="w-[250px] md:w-full flex-shrink-0">
-              <div className="card rounded-none bg-base-100 shadow-xl">
+              <div className="card rounded-none bg-base-100 shadow-lg">
                 <figure>
                   <img
                     className="w-full h-auto"

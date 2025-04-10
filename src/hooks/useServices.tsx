@@ -3,6 +3,7 @@ import {
   getCalendarQuery,
   getEventsQuery,
   hallOfFameListQuery,
+  membersList,
   membersQuery,
   rideDetailsQuery,
   rideListQuery,
@@ -28,6 +29,13 @@ export const useServices = () => {
   const getRideDetails = async (slug: string) => {
     const response = await axios.get(
       `${HYGRAPH_ENDPOINT}?query=${rideDetailsQuery(slug)}`
+    );
+    return response.data;
+  };
+
+  const getMemberDetails = async (memberName: string) => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${membersList(memberName)}`
     );
     return response.data;
   };
@@ -68,5 +76,6 @@ export const useServices = () => {
     getMembersList,
     getCalendarDates,
     getEventsList,
+    getMemberDetails,
   };
 };

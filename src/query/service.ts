@@ -24,6 +24,23 @@ export const rideListQuery = encodeURIComponent(`
 }
 `);
 
+export const membersList = (memberName: string) => {
+  return encodeURIComponent(`
+  query{
+  members(where:{userName:"${memberName}"}){
+    name,
+    memberType,
+     profileImage{
+      url
+    },
+    bio,
+    designation,
+    userName
+  }
+  }
+  `);
+};
+
 export const rideDetailsQuery = (slug: string) => {
   return encodeURIComponent(`
     query {

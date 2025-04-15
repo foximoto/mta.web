@@ -31,7 +31,9 @@ function RideDetail() {
       {rideData && (
         <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-20">
           <PageHeader heading={rideData.rideName} />
-          <Markdown>{rideData.details}</Markdown>
+          <div className="markdown">
+            <Markdown>{rideData.details}</Markdown>
+          </div>
         </div>
       )}
       <Footer />

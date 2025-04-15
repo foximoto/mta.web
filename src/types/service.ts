@@ -43,3 +43,14 @@ export type eventsDataType = {
   };
   description: string;
 };
+
+export type memberDetailsType = {
+  name: string;
+  memberType: string;
+  profileImage: {
+    url: string;
+  };
+  bio: string;
+  designation: string;
+  userName: string;
+};

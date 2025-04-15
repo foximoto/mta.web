@@ -1,14 +1,15 @@
+/* eslint-disable react/no-children-prop */
 /* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
-import { log } from "console";
+import { memberDetailsType } from "@/types/service";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { marked } from "marked";
+import Markdown from "react-markdown";
 
 function MemberProfile() {
-  const [memberData, setMemberData] = useState<any>();
+  const [memberData, setMemberData] = useState<memberDetailsType>();
   const router = useRouter();
 
   const { getMemberDetails } = useServices();
@@ -39,7 +40,7 @@ function MemberProfile() {
           <div className="flex justify-center items-center">
             <img
               alt=""
-              src={memberData.profileImage.url}
+              src={memberData?.profileImage?.url || "/placeholder.png"}
               className="avatar w-60 h-60 rounded-full mt-[-120px] border-2 border-white object-cover "
             />
           </div>
@@ -53,13 +54,8 @@ function MemberProfile() {
             </div>
           </a>
           <div className="w-full md:w-2/3 mx-auto  my-10">
-            <div className="px-4 md:col-span-2">
-              <div
-                className="text-xl leading-relaxed"
-                dangerouslySetInnerHTML={{
-                  __html: marked.parse(memberData?.bio || ""),
-                }}
-              ></div>{" "}
+            <div className="px-4 md:col-span-2 markdown">
+              <Markdown children={memberData?.bio} />
             </div>
           </div>
         </>

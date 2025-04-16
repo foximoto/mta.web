@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
   images: {
     dangerouslyAllowSVG: true,
@@ -9,6 +8,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "**.graphassets.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
       },
     ],
   },

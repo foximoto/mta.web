@@ -29,7 +29,7 @@ function CommunitySpotlight() {
           ))}
 
           <Link
-            href="/"
+            href="/hall-of-fames"
             className="w-[250px] md:w-full flex-shrink-0 card bg-base-100 shadow-xl flex justify-center items-center rounded-none p-4"
           >
             <span className="text-xl font-semibold text-center">

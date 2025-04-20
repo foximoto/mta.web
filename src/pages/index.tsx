@@ -16,7 +16,7 @@ function Home() {
       </div>
       <JoinMta />
       <CommunitySpotlight />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 mb-4">
         <Gallery
           leftImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"
           topRightImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"

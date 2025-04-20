@@ -54,3 +54,12 @@ export type memberDetailsType = {
   designation: string;
   userName: string;
 };
+
+export type hallOfFamesType = {
+  id: string;
+  title: string;
+  coverImage: {
+    id: string;
+    url: string;
+  };
+};

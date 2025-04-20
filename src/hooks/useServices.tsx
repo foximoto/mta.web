@@ -16,7 +16,7 @@ export const useServices = () => {
     const response = await axios.get(
       `${HYGRAPH_ENDPOINT}?query=${hallOfFameListQuery}`
     );
-    return response.data;
+    return response.data?.data?.hallOfFames;
   };
 
   const getRideList = async () => {

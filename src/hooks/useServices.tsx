@@ -1,5 +1,6 @@
 import {
   boardOfDirectorsQuery,
+  founderQuery,
   getCalendarQuery,
   getEventsQuery,
   hallOfFameListQuery,
@@ -47,6 +48,13 @@ export const useServices = () => {
     return response?.data?.data?.membersList;
   };
 
+  const getFounderList = async () => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${founderQuery}`
+    );
+    return response?.data?.data?.membersList;
+  };
+
   const getMembersList = async () => {
     const response = await axios.get(
       `${HYGRAPH_ENDPOINT}?query=${membersQuery}`
@@ -77,5 +85,6 @@ export const useServices = () => {
     getCalendarDates,
     getEventsList,
     getMemberDetails,
+    getFounderList,
   };
 };

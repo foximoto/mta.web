@@ -9,8 +9,10 @@ function Members() {
   const [boardOfDirectorsList, setBoardOfDirectorsList] =
     useState<Array<boardOfDirectorsType>>();
   const [membersList, setMembersList] = useState<Array<boardOfDirectorsType>>();
+  const [founder, setFounder] = useState<Array<boardOfDirectorsType>>();
 
-  const { getBoardOfDirectorsList, getMembersList } = useServices();
+  const { getBoardOfDirectorsList, getMembersList, getFounderList } =
+    useServices();
 
   useEffect(() => {
     getBoardOfDirectorsList().then((response) => {
@@ -18,6 +20,9 @@ function Members() {
     });
     getMembersList().then((response) => {
       setMembersList(response);
+    });
+    getFounderList().then((response) => {
+      setFounder(response);
     });
   }, []);
 
@@ -27,8 +32,23 @@ function Members() {
     <div className="container mx-auto">
       <Navbar />
       <div className="p-2">
+        <div className="text-4xl font-semibold my-20 text-center">FOUNDER</div>
+        <div className="flex justify-center">
+          {founder?.map((obj) => {
+            return (
+              <div key={obj.name} className="mb-10">
+                <MemberAvatar
+                  instagram_handle={obj.userName}
+                  name={obj.name}
+                  profile_url={obj.profileImage?.url}
+                  designation={obj.designation}
+                />
+              </div>
+            );
+          })}
+        </div>
         <div className="text-4xl font-semibold my-20 text-center">
-          BOARD OF DIRECTORS
+          BOARD MEMBERS
         </div>
         <div className="grid grid-cols-3 ">
           {boardOfDirectorsList?.map((obj) => {
@@ -54,7 +74,6 @@ function Members() {
                   instagram_handle={obj.userName}
                   name={obj.name}
                   profile_url={obj.profileImage?.url}
-                  designation={obj.designation}
                 />
               </div>
             );

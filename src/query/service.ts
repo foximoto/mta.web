@@ -70,6 +70,19 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
 }
 `);
 
+export const founderQuery = encodeURIComponent(`
+  query {
+    membersList(where:{memberType:founder}){
+  name,
+  userName,
+  profileImage{
+    url
+  }
+  designation
+}
+}
+`);
+
 export const membersQuery = encodeURIComponent(`
   query {
     membersList(where:{memberType:member}){

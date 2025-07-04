@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";

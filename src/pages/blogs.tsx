@@ -1,8 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import Link from "next/link";
-import React from "react";
 
 function blogs() {
   return (

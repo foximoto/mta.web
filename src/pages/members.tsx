@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Footer from "@/components/Footer";
 import MemberAvatar from "@/components/MemberAvatar";
 import Navbar from "@/components/Navbar";

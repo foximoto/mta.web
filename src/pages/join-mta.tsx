@@ -73,93 +73,12 @@ function JoinMta() {
 
         <p className="mb-6">Be a Motorcycle Tourer, Not Just A Rider!!</p>
 
-        <div className="mt-6">
-          <h2 className="text-3xl font-semibold mb-4">Application Form</h2>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="input input-bordered w-full"
-              />
-            </div>
-
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Contact Number</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Contact Number"
-                className="input input-bordered w-full"
-              />
-            </div>
-
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Email ID</span>
-              </label>
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="input input-bordered w-full"
-              />
-            </div>
-
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Instagram Username</span>
-              </label>
-              <input
-                type="text"
-                placeholder="@username"
-                className="input input-bordered w-full"
-              />
-            </div>
-
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Vehicle Make & Model</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Make and Model"
-                className="input input-bordered w-full"
-              />
-            </div>
-
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Vehicle Registration #</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Registration Number"
-                className="input input-bordered w-full"
-              />
-            </div>
-
-            <div className="form-control w-full md:col-span-2">
-              <label className="label">
-                <span className="label-text">License Number</span>
-              </label>
-              <input
-                type="text"
-                placeholder="License Number"
-                className="input input-bordered w-full"
-              />
-            </div>
-
-            <div className="md:col-span-2">
-              <button type="submit" className="btn btn-primary w-full mb-5">
-                Submit Application
-              </button>
-            </div>
-          </form>
-        </div>
+        <a
+          href="https://www.instagram.com/motorcycletourersassociation/"
+          className="btn btn-accent mb-6"
+        >
+          Contact on Instagram
+        </a>
       </div>
 
       <Footer />

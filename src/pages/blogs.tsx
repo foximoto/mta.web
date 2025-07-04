@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
@@ -11,7 +10,8 @@ function blogs() {
       <Navbar />
       <PageHeader heading="Blogs" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 mb-10">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
+        <div className="text-3xl font-semibold text-center">Coming Soon!</div>
+        {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
           <Link key={i} href={"blog-view"}>
             <div className="p-2">
               <div className="card bg-base-100 rounded-none shadow-xl">
@@ -30,7 +30,7 @@ function blogs() {
               </div>
             </div>
           </Link>
-        ))}
+        ))} */}
       </div>
       <Footer />
     </div>

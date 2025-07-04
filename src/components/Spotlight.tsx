@@ -20,7 +20,7 @@ function Spotlight() {
   }, [images.length]);
 
   return (
-    <div className="w-full">
+    <div className="container mx-auto">
       <div
         className="hero h-[600px]"
         style={{

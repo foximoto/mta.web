@@ -14,22 +14,23 @@ function Home() {
       <div className="w-screen relative left-1/2 -translate-x-1/2">
         <Spotlight />
       </div>
-      <JoinMta />
-      <CommunitySpotlight />
-      <div className="flex flex-col gap-2 mb-4">
+      <div className="flex flex-col gap-2 mb-4 mt-4">
         <Gallery
-          leftImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"
-          topRightImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"
-          bottomRightImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"
+          leftImage="/images/asiabooks.jpeg"
+          topRightImage="/images/r2r1.jpeg"
+          bottomRightImage="/images/r2r3.jpeg"
           swap={false}
         />
         <Gallery
-          leftImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"
-          topRightImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"
-          bottomRightImage="https://images.pexels.com/photos/1133505/pexels-photo-1133505.jpeg"
+          leftImage="/images/ironrider.jpeg"
+          topRightImage="/images/r2r2.jpg"
+          bottomRightImage="/images/motocamp.jpg"
           swap={true}
         />
       </div>
+      <JoinMta />
+      <CommunitySpotlight />
+
       <Footer />
     </div>
   );

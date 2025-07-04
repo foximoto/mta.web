@@ -62,6 +62,7 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
     membersList(where:{memberType:coreTeam}){
   name,
   userName,
+  order,
   profileImage{
     url
   }

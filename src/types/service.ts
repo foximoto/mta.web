@@ -28,6 +28,7 @@ export type boardOfDirectorsType = {
     url: string;
   };
   designation: string;
+  order: number;
 };
 
 export type calendarDataType = {

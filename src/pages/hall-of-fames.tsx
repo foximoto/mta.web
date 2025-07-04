@@ -24,16 +24,19 @@ const HallOfFame = () => {
       <PageHeader heading="Hall of Fames" />
       <div className="flex space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
         {hallOfFames?.map((i) => (
-          <div key={i.id} className="w-[250px] h-max md:w-full flex-shrink-0">
+          <div
+            key={i.id}
+            className="w-[250px] max-h-[600px] md:w-full flex-shrink-0"
+          >
             <div className="card rounded-none bg-base-100 shadow-lg">
               <figure>
                 <img
-                  className="w-full h-auto"
+                  className="w-full h-[300px] object-cover"
                   src={i?.coverImage?.url}
                   alt="hall of fame"
                 />
               </figure>
-              <div className="card-body">
+              <div className="card-body h-[200px]">
                 <h3 className="card-title">{i?.title}</h3>
               </div>
             </div>

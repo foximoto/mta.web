@@ -52,18 +52,20 @@ function Members() {
           BOARD MEMBERS
         </div>
         <div className="grid grid-cols-3 ">
-          {boardOfDirectorsList?.map((obj) => {
-            return (
-              <div key={obj.name} className="mb-10">
-                <MemberAvatar
-                  instagram_handle={obj.userName}
-                  name={obj.name}
-                  profile_url={obj.profileImage?.url}
-                  designation={obj.designation}
-                />
-              </div>
-            );
-          })}
+          {boardOfDirectorsList
+            ?.sort((a, b) => a.order - b.order)
+            .map((obj) => {
+              return (
+                <div key={obj.name} className="mb-10">
+                  <MemberAvatar
+                    instagram_handle={obj.userName}
+                    name={obj.name}
+                    profile_url={obj.profileImage?.url}
+                    designation={obj.designation}
+                  />
+                </div>
+              );
+            })}
         </div>
 
         <div className="text-4xl font-semibold my-20 text-center">MEMBERS</div>

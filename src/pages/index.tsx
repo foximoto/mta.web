@@ -1,4 +1,3 @@
-import CommunitySpotlight from "@/components/CommunitySpotlight";
 import Footer from "@/components/Footer";
 import JoinMta from "@/components/JoinMta";
 import Spotlight from "@/components/Spotlight";
@@ -29,7 +28,7 @@ function Home() {
         />
       </div>
       <JoinMta />
-      <CommunitySpotlight />
+      {/* <CommunitySpotlight /> */}
 
       <Footer />
     </div>

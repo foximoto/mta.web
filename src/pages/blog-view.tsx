@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Meta from "@/meta/meta";
 
 function BlogView() {
   return (
     <div className="container mx-auto">
+      <Meta title="Blogs" favicon="/favicon-home.ico" />
       <Navbar />
       <div className="w-2/3 mx-auto py-20">
         <img

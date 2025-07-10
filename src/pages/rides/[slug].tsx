@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
+import Meta from "@/meta/meta";
 import { rideDetailsType } from "@/types/service";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -27,6 +28,7 @@ function RideDetail() {
 
   return (
     <div className="container mx-auto">
+      <Meta title="Rides" favicon="/favicon-home.ico" />
       <Navbar />
       {rideData && (
         <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-20">

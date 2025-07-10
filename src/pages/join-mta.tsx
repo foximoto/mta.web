@@ -1,11 +1,13 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
+import Meta from "@/meta/meta";
 import React from "react";
 
 function JoinMta() {
   return (
     <div>
+      <Meta title="Join MTA" favicon="/favicon-home.ico" />
       <Navbar />
       <PageHeader heading="Join MTA" />
 

@@ -64,14 +64,20 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <Link href="/hall-of-fames">
+        <Link href="/community-wall">
           <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
-            Hall of Fames
+            Community Wall
           </button>
         </Link>
         <Link href="/calendar">
           <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
             Calendar
+          </button>
+        </Link>
+
+        <Link href="/shop">
+          <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
+            Shop
           </button>
         </Link>
         <Link href="/blogs">

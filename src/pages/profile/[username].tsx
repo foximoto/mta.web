@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
+import Meta from "@/meta/meta";
 import { memberDetailsType } from "@/types/service";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -27,6 +28,7 @@ function MemberProfile() {
 
   return (
     <div className="container mx-auto">
+      <Meta title={memberData?.name || ""} favicon="/favicon-home.ico" />
       <Navbar />
       <div
         className="hero h-[400px] bg-cover bg-center"
@@ -47,7 +49,11 @@ function MemberProfile() {
           <div className="text-3xl font-semibold text-center mt-6">
             {memberData.name}
           </div>
-          <a href="https://www.instagram.com/vepavicalicutchoppers/">
+          <a
+            href={`https://instagram.com/${memberData.userName}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="flex items-center justify-center mt-2">
               <img src="/icons/instagram.svg" className="w-4 h-4" alt="" />
               <div className="text-xs">{memberData.userName}</div>

@@ -8,6 +8,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import { useServices } from "@/hooks/useServices";
 import { calendarDataType } from "@/types/service";
 import moment from "moment";
+import Meta from "@/meta/meta";
 
 function Calendar() {
   const [events, setEvents] = useState<Array<calendarDataType>>();
@@ -24,6 +25,7 @@ function Calendar() {
 
   return (
     <div className="container mx-auto">
+      <Meta title="Calendar" favicon="/favicon-home.ico" />
       <Navbar />
       <PageHeader heading="Ride Calendar" />
       {/* Responsive wrapper for FullCalendar */}

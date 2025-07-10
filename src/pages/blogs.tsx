@@ -1,10 +1,12 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
+import Meta from "@/meta/meta";
 
 function blogs() {
   return (
     <div className="container mx-auto">
+      <Meta title="Blogs" favicon="/favicon-home.ico" />
       <Navbar />
       <PageHeader heading="Blogs" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 mb-10">

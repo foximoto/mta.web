@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import MemberAvatar from "@/components/MemberAvatar";
 import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
+import Meta from "@/meta/meta";
 import { boardOfDirectorsType } from "@/types/service";
 import { useEffect, useState } from "react";
 
@@ -31,6 +32,7 @@ function Members() {
 
   return (
     <div className="container mx-auto">
+      <Meta title="Members" favicon="/favicon-home.ico" />
       <Navbar />
       <div className="p-2">
         <div className="text-4xl font-semibold my-20 text-center">FOUNDER</div>

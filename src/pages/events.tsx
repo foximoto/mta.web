@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
+import Meta from "@/meta/meta";
 import { eventsDataType } from "@/types/service";
 import { useEffect, useState } from "react";
 
@@ -20,6 +21,7 @@ function Events() {
   }, []);
   return (
     <div className="container mx-auto">
+      <Meta title="Events" favicon="/favicon-home.ico" />
       <Navbar />
       <PageHeader heading="Events" />
 

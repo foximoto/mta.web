@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
+import Meta from "@/meta/meta";
 import { rideListType } from "@/types/service";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -20,6 +21,7 @@ function Rides() {
 
   return (
     <div className="container mx-auto">
+      <Meta title="Rides" favicon="/favicon-home.ico" />
       <Navbar />
       <PageHeader heading="Rides" />
 

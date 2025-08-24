@@ -63,4 +63,5 @@ export type hallOfFamesType = {
     id: string;
     url: string;
   };
+  description?: string;
 };

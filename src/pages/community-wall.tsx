@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 const CommunityWall = () => {
   const [hallOfFames, setHallOfFames] = useState<Array<hallOfFamesType>>();
+  const [selectedItem, setSelectedItem] = useState<hallOfFamesType>();
 
   const { getHallOfFameList } = useServices();
 
@@ -24,11 +25,29 @@ const CommunityWall = () => {
       <Meta title="Community Wall" favicon="/favicon-home.ico" />
       <Navbar />
       <PageHeader heading="Community Wall" />
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <img src={selectedItem?.coverImage?.url} alt="Shoes" />
+          <h3 className="font-bold text-2xl mt-4">{selectedItem?.title}</h3>
+          <p className="py-4">{selectedItem?.description}</p>
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
       <div className="flex space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
         {hallOfFames?.map((i) => (
           <div
             key={i.id}
-            className="w-[250px] max-h-[600px] md:w-full flex-shrink-0"
+            className="w-[250px] max-h-[600px] md:w-full flex-shrink-0 cursor-pointer"
+            onClick={() => {
+              (
+                document.querySelector("#my_modal_5") as HTMLDialogElement
+              )?.showModal();
+              setSelectedItem(i);
+            }}
           >
             <div className="card rounded-none bg-base-100 shadow-lg">
               <figure>

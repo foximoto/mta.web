@@ -7,6 +7,7 @@ export const hallOfFameListQuery = encodeURIComponent(`
         id
         url
       }
+      description
     }
   }
 `);

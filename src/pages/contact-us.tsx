@@ -20,13 +20,13 @@ function ContactUs() {
         <div>
           <a
             href="https://wa.link/yqy1v9"
-            className="btn btn-success text-white mx-2"
+            className="btn bg-black text-yellow-500 mr-2 my-2"
           >
             Contact us on Whatsapp
           </a>
           <a
             href="https://www.instagram.com/motorcycletourersassociation/"
-            className="btn btn-secondary text-white mx-2"
+            className="btn bg-black text-yellow-500 mr-2 my-2"
           >
             Contact us on Instagram
           </a>

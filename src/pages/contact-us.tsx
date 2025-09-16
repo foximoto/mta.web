@@ -17,25 +17,19 @@ function ContactUs() {
           K.P Kesava Menon Road <br /> Poovalappu <br /> Calicut, Kerala <br />
           PIN:673001
         </div>
-        <div className="mt-10 md:mt-0">
-          <label className="input input-bordered flex items-center gap-2">
-            Name
-            <input type="text" className="grow" />
-          </label>
-          <label className="input input-bordered flex items-center gap-2 mt-4">
-            Email
-            <input type="email" className="grow" />
-          </label>
-          <label className="form-control mt-4">
-            {/* <div className="label">
-              <span className="label-text text-base">Message</span>
-            </div> */}
-            <textarea
-              className="textarea textarea-bordered h-24"
-              placeholder="Enter your message"
-            ></textarea>
-          </label>
-          <button className="btn btn-primary  w-full mt-4">Sent</button>
+        <div>
+          <a
+            href="https://wa.link/yqy1v9"
+            className="btn btn-success text-white mx-2"
+          >
+            Contact us on Whatsapp
+          </a>
+          <a
+            href="https://www.instagram.com/motorcycletourersassociation/"
+            className="btn btn-secondary text-white mx-2"
+          >
+            Contact us on Instagram
+          </a>
         </div>
       </div>
       <Footer />

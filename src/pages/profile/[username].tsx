@@ -15,16 +15,22 @@ function MemberProfile() {
 
   const { getMemberDetails } = useServices();
 
+  console.log(router.query);
+
   useEffect(() => {
-    if (router?.query?.username) {
-      const username = Array.isArray(router.query.username)
-        ? router.query.username[0]
-        : router.query.username;
+    if (!router.isReady) return;
+
+    const username = Array.isArray(router.query.username)
+      ? router.query.username[0]
+      : router.query.username;
+
+    if (username) {
+      console.log(username);
       getMemberDetails(username).then((response) => {
         setMemberData(response?.data?.members);
       });
     }
-  }, []);
+  }, [router.isReady, router.query.username]);
 
   return (
     <div className="container mx-auto">
@@ -61,7 +67,7 @@ function MemberProfile() {
           </a>
           <div className="w-full md:w-2/3 mx-auto  my-10">
             <div className="px-4 md:col-span-2 markdown">
-              <Markdown children={memberData?.bio} />
+              <Markdown>{memberData?.bio}</Markdown>
             </div>
           </div>
         </>

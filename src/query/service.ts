@@ -139,3 +139,29 @@ export const getEventsQuery = () => {
     }
   `);
 };
+
+export const getBlogListQuery = () => {
+  return encodeURIComponent(`
+   query{
+  blogsList{
+    blogName,
+    coverImage{
+      url
+    }
+    author,
+  }
+}
+  `);
+};
+
+export const getPartnersQuery = () => {
+  return encodeURIComponent(`
+   query{
+   partners{
+  logo{
+    url
+  }
+}
+}
+  `);
+};

@@ -4,6 +4,7 @@ import Spotlight from "@/components/Spotlight";
 import Navbar from "../components/Navbar";
 import Meta from "@/meta/meta";
 import Gallery from "@/components/gallery";
+import Sponsors from "@/components/Sponsors";
 
 function Home() {
   return (
@@ -28,6 +29,7 @@ function Home() {
         />
       </div>
       <JoinMta />
+      <Sponsors />
       {/* <CommunitySpotlight /> */}
 
       <Footer />

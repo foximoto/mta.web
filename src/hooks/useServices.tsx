@@ -2,8 +2,10 @@ import {
   boardOfDirectorsQuery,
   crewQuery,
   founderQuery,
+  getBlogListQuery,
   getCalendarQuery,
   getEventsQuery,
+  getPartnersQuery,
   hallOfFameListQuery,
   membersList,
   membersQuery,
@@ -82,6 +84,20 @@ export const useServices = () => {
     return response?.data?.data?.eventsList;
   };
 
+  const getBlogList = async () => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${getBlogListQuery()}`
+    );
+    return response?.data?.data?.blogsList;
+  };
+
+  const getPartnersList = async () => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${getPartnersQuery()}`
+    );
+    return response?.data?.data?.partners;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
@@ -93,5 +109,7 @@ export const useServices = () => {
     getMemberDetails,
     getFounderList,
     getCrewList,
+    getBlogList,
+    getPartnersList,
   };
 };

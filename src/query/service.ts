@@ -58,6 +58,21 @@ export const rideDetailsQuery = (slug: string) => {
   `);
 };
 
+export const singleBlogQuery = (slug: string) => {
+  return encodeURIComponent(`
+    query {
+blogs(where:{slug:"${slug}"}){
+  blogName,
+  content,
+  coverImage{
+    url
+  }
+    author
+}
+}
+  `);
+};
+
 export const boardOfDirectorsQuery = encodeURIComponent(`
   query {
     membersList(where:{memberType:coreTeam}){
@@ -149,6 +164,7 @@ export const getBlogListQuery = () => {
       url
     }
     author,
+    slug
   }
 }
   `);

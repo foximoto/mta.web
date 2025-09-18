@@ -38,7 +38,7 @@ const CommunityWall = () => {
         </div>
       </dialog>
       <div className="flex space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
-        {hallOfFames?.map((i) => (
+        {[...(hallOfFames ?? [])].reverse().map((i) => (
           <div
             key={i.id}
             className="w-[250px] max-h-[600px] md:w-full flex-shrink-0 cursor-pointer"

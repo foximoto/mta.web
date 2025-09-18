@@ -39,7 +39,7 @@ function Events() {
         </div>
       </dialog>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 mb-10">
-        {eventList?.map((i) => (
+        {[...(eventList ?? [])].reverse().map((i) => (
           <div
             key={i.eventName}
             onClick={() => {

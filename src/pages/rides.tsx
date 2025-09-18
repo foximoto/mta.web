@@ -28,29 +28,27 @@ function Rides() {
       <div className="py-0">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {" "}
-          {rideList?.data?.ridesList
-            ?.sort((a, b) => Number(a.order) - Number(b.order))
-            .map((obj) => {
-              return (
-                <Link
-                  href={"/rides/" + obj.slug}
-                  key={obj.rideName}
-                  className="shrink-0"
-                >
-                  <div className="flex flex-col items-center">
-                    <img
-                      src={obj?.rideLogo?.url}
-                      alt=""
-                      className="w-40 h-40 rounded-full object-cover"
-                    />
-                    <div className="text-center mt-2">{obj?.rideName}</div>
-                  </div>
-                </Link>
-              );
-            })}
+          {[...(rideList?.data?.ridesList ?? [])].reverse().map((obj) => {
+            return (
+              <Link
+                href={"/rides/" + obj.slug}
+                key={obj.rideName}
+                className="shrink-0"
+              >
+                <div className="flex flex-col items-center">
+                  <img
+                    src={obj?.rideLogo?.url}
+                    alt=""
+                    className="w-40 h-40 rounded-full object-cover"
+                  />
+                  <div className="text-center mt-2">{obj?.rideName}</div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
-
+      <div className="h-20" />
       <Footer />
     </div>
   );

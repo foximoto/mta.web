@@ -11,6 +11,7 @@ import {
   membersQuery,
   rideDetailsQuery,
   rideListQuery,
+  singleBlogQuery,
 } from "@/query/service";
 import { HYGRAPH_ENDPOINT } from "../../env";
 import axios from "axios";
@@ -98,6 +99,13 @@ export const useServices = () => {
     return response?.data?.data?.partners;
   };
 
+  const getSingleBlog = async (slug: string) => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${singleBlogQuery(slug)}`
+    );
+    return response.data;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
@@ -110,6 +118,7 @@ export const useServices = () => {
     getFounderList,
     getCrewList,
     getBlogList,
+    getSingleBlog,
     getPartnersList,
   };
 };

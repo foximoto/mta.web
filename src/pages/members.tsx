@@ -12,9 +12,14 @@ function Members() {
     useState<Array<boardOfDirectorsType>>();
   const [membersList, setMembersList] = useState<Array<boardOfDirectorsType>>();
   const [founder, setFounder] = useState<Array<boardOfDirectorsType>>();
+  const [crew, setCrew] = useState<Array<boardOfDirectorsType>>();
 
-  const { getBoardOfDirectorsList, getMembersList, getFounderList } =
-    useServices();
+  const {
+    getBoardOfDirectorsList,
+    getMembersList,
+    getFounderList,
+    getCrewList,
+  } = useServices();
 
   useEffect(() => {
     getBoardOfDirectorsList().then((response) => {
@@ -26,9 +31,12 @@ function Members() {
     getFounderList().then((response) => {
       setFounder(response);
     });
+    getCrewList().then((response) => {
+      setCrew(response);
+    });
   }, []);
 
-  console.log(boardOfDirectorsList);
+  console.log(crew);
 
   return (
     <div className="container mx-auto">
@@ -68,6 +76,24 @@ function Members() {
                 </div>
               );
             })}
+        </div>
+
+        <div className="text-4xl font-semibold my-20 text-center">
+          RIDE CREW
+        </div>
+        <div className="flex justify-center">
+          {crew?.map((obj) => {
+            return (
+              <div key={obj.name} className="mb-10">
+                <MemberAvatar
+                  instagram_handle={obj.userName}
+                  name={obj.name}
+                  profile_url={obj.profileImage?.url}
+                  designation={obj.designation}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <div className="text-4xl font-semibold my-20 text-center">MEMBERS</div>

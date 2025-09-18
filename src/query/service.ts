@@ -85,9 +85,22 @@ export const founderQuery = encodeURIComponent(`
 }
 `);
 
+export const crewQuery = encodeURIComponent(`
+  query {
+    membersList(where:{memberType:crew}){
+  name,
+  userName,
+  profileImage{
+    url
+  }
+  designation
+}
+}
+`);
+
 export const membersQuery = encodeURIComponent(`
   query {
-    membersList(where:{memberType:member}){
+    membersList(first: 1000,where:{memberType:member}){
   name,
   userName,
   profileImage{

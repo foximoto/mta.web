@@ -74,12 +74,6 @@ function Navbar() {
             Calendar
           </button>
         </Link>
-
-        <Link href="/shop">
-          <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
-            Shop
-          </button>
-        </Link>
         <Link href="/blogs">
           <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
             Blogs

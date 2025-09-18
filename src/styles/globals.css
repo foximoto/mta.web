@@ -14,12 +14,12 @@
 
 .markdown h3 {
   display: block;
-  font-size: 1.2em;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  margin-left: 0;
-  margin-right: 0;
+  font-size: 1.17em;
   font-weight: bold;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 .markdown p {
@@ -28,4 +28,39 @@
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
+}
+
+.markdown ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 40px;
+}
+
+.markdown li {
+  display: list-item;
+  text-align: match-parent;
+}
+
+.markdown h5 {
+  display: block;
+  font-size: 0.83em;
+  font-weight: bold;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.markdown ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 40px;
 }

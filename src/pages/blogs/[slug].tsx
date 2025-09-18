@@ -8,6 +8,7 @@ import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
 
 function BlogView() {
   const router = useRouter();
@@ -41,7 +42,9 @@ function BlogView() {
         />
         <div className="text-4xl font-semibold mt-6">{blogs?.blogName}</div>
         <br />
-        {blogs?.content}
+        <div className="markdown">
+          <Markdown>{blogs?.content}</Markdown>
+        </div>
       </div>
       <Footer />
     </div>

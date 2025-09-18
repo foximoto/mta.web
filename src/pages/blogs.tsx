@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Blogs() {

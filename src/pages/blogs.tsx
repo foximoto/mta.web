@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Blogs() {
-  const [blogsList, setBlogsList] = useState();
+  const [blogsList, setBlogsList] = useState<Array<any>>();
   const { getBlogList } = useServices();
 
   useEffect(() => {

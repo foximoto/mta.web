@@ -35,6 +35,9 @@ export type boardOfDirectorsType = {
   };
   designation: string;
   order: number;
+  ridePatches: {
+    url: string;
+  }[];
 };
 
 export type calendarDataType = {
@@ -60,6 +63,9 @@ export type memberDetailsType = {
   bio: string;
   designation: string;
   userName: string;
+  ridePatches: {
+    url: string;
+  }[];
 };
 
 export type hallOfFamesType = {

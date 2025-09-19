@@ -37,11 +37,11 @@ const CommunityWall = () => {
           </div>
         </div>
       </dialog>
-      <div className="flex space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
+      <div className="flex flex-wrap space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
         {[...(hallOfFames ?? [])].reverse().map((i) => (
           <div
             key={i.id}
-            className="w-[250px] max-h-[600px] md:w-full flex-shrink-0 cursor-pointer"
+            className="md:w-[250px] max-h-[600px] w-full flex-shrink-0 cursor-pointer"
             onClick={() => {
               (
                 document.querySelector("#my_modal_5") as HTMLDialogElement

@@ -34,7 +34,7 @@ function BlogView() {
     <div className="container mx-auto">
       <Meta title="Blogs" favicon="/favicon-home.ico" />
       <Navbar />
-      <div className="w-2/3 mx-auto py-20">
+      <div className=" px-4 mx-auto py-20">
         <img
           src={blogs?.coverImage?.url}
           alt=""

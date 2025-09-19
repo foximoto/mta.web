@@ -19,7 +19,7 @@ function JoinMta() {
           you are a long distance motorcycle riding addict, you’ve come to the
           right place. Then welcome to the world of Motorcycle Tourers.
         </p>
-        <Link href="/join-mta" className="btn">
+        <Link href="/join-mta" className="btn bg-black text-yellow-600">
           Apply now
         </Link>
       </div>

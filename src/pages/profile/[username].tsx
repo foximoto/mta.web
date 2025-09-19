@@ -16,8 +16,6 @@ function MemberProfile() {
 
   const { getMemberDetails } = useServices();
 
-  console.log(router.query);
-
   useEffect(() => {
     if (!router.isReady) return;
 
@@ -66,9 +64,24 @@ function MemberProfile() {
               <div className="text-xs">{memberData.userName}</div>
             </div>
           </a>
+
           <div className="w-full md:w-2/3 mx-auto  my-10">
             <div className="px-4 md:col-span-2 markdown">
               <Markdown>{memberData?.bio}</Markdown>
+            </div>
+            <div>
+              {memberData?.ridePatches?.length
+                ? memberData?.ridePatches?.map((obj) => {
+                    return (
+                      <img
+                        key={obj.url}
+                        src={obj.url}
+                        alt="ride patch"
+                        className="w-32 h-32 inline-block object-cover m-2"
+                      />
+                    );
+                  })
+                : null}
             </div>
           </div>
         </>

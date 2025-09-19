@@ -36,7 +36,10 @@ export const membersList = (memberName: string) => {
     },
     bio,
     designation,
-    userName
+    userName,
+     ridePatches {
+      url
+    }
   }
   }
   `);
@@ -83,7 +86,10 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation
+  designation,
+  ridePatches {
+      url
+    }
 }
 }
 `);
@@ -96,7 +102,10 @@ export const founderQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation
+  designation,
+   ridePatches {
+      url
+    }
 }
 }
 `);
@@ -109,7 +118,10 @@ export const crewQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation
+  designation,
+   ridePatches {
+      url
+    }
 }
 }
 `);
@@ -122,7 +134,10 @@ export const membersQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation
+  designation,
+   ridePatches {
+      url
+    }
 }
 }
 `);

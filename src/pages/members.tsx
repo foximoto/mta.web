@@ -53,6 +53,7 @@ function Members() {
                   name={obj.name}
                   profile_url={obj.profileImage?.url}
                   designation={obj.designation}
+                  ridePatches={obj.ridePatches}
                 />
               </div>
             );
@@ -72,6 +73,7 @@ function Members() {
                     name={obj.name}
                     profile_url={obj.profileImage?.url}
                     designation={obj.designation}
+                    ridePatches={obj.ridePatches}
                   />
                 </div>
               );
@@ -90,6 +92,7 @@ function Members() {
                   name={obj.name}
                   profile_url={obj.profileImage?.url}
                   designation={obj.designation}
+                  ridePatches={obj.ridePatches}
                 />
               </div>
             );
@@ -105,6 +108,7 @@ function Members() {
                   instagram_handle={obj.userName}
                   name={obj.name}
                   profile_url={obj.profileImage?.url}
+                  ridePatches={obj.ridePatches}
                 />
               </div>
             );

@@ -38,7 +38,7 @@ function RideDetail() {
           </div>
         </div>
       )}
-      <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10">
+      <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10 overflow-scroll">
         <div className="text-3xl font-semibold">Completed Riders</div>
         <table className="table-auto w-full border-collapse border border-gray-300 mt-4 shadow-md rounded-lg overflow-hidden">
           <thead className="bg-gray-100 text-gray-700 uppercase text-sm">

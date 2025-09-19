@@ -24,20 +24,51 @@ function RideDetail() {
         setRideData(response?.data?.rides);
       });
     }
-  }, []);
+  }, [router.isReady, router.query.slug]);
 
   return (
     <div className="container mx-auto">
       <Meta title="Rides" favicon="/favicon-home.ico" />
       <Navbar />
       {rideData && (
-        <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-20">
-          <PageHeader heading={rideData.rideName} />
+        <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10">
+          <PageHeader heading={rideData?.rideName} />
           <div className="markdown">
-            <Markdown>{rideData.details}</Markdown>
+            <Markdown>{rideData?.details}</Markdown>
           </div>
         </div>
       )}
+      <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10">
+        <div className="text-3xl font-semibold">Completed Riders</div>
+        <table className="table-auto w-full border-collapse border border-gray-300 mt-4 shadow-md rounded-lg overflow-hidden">
+          <thead className="bg-gray-100 text-gray-700 uppercase text-sm">
+            <tr>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Rider&apos;s Name
+              </th>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Year
+              </th>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Hometown
+              </th>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Bike Ridden
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {rideData?.completedRiders?.map((obj, index) => (
+              <tr className="hover:bg-gray-50" key={obj.name + index}>
+                <td className="px-4 py-2">{obj?.name}</td>
+                <td className="px-4 py-2">{obj?.year}</td>
+                <td className="px-4 py-2">{obj?.location}</td>
+                <td className="px-4 py-2">{obj?.motorcycle}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <Footer />
     </div>
   );

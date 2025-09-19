@@ -19,6 +19,12 @@ export type rideDetailsType = {
   slug: string;
   details: string;
   registrationOpen: boolean;
+  completedRiders: {
+    name: string;
+    year: string;
+    location: string;
+    motorcycle: string;
+  }[];
 };
 
 export type boardOfDirectorsType = {

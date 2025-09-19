@@ -52,7 +52,8 @@ export const rideDetailsQuery = (slug: string) => {
       },
       slug,
       details,
-      registrationOpen
+      registrationOpen,
+      completedRiders
     }
   }
   `);

@@ -86,6 +86,14 @@ function MemberProfile() {
           </div>
         </>
       )}
+      {memberData?.polarstepUrl && (
+        <iframe
+          src={memberData?.polarstepUrl}
+          title="Example Website"
+          className="w-full h-[600px]"
+          frameBorder="0"
+        ></iframe>
+      )}
 
       <Footer />
     </div>

@@ -39,7 +39,8 @@ export const membersList = (memberName: string) => {
     userName,
     ridePatches(first:1000) {
       url
-    }
+    },
+    polarstepUrl
   }
   }
   `);

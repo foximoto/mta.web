@@ -66,6 +66,7 @@ export type memberDetailsType = {
   ridePatches: {
     url: string;
   }[];
+  polarstepUrl: string;
 };
 
 export type hallOfFamesType = {

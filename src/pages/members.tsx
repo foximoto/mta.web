@@ -101,18 +101,24 @@ function Members() {
 
         <div className="text-4xl font-semibold my-20 text-center">MEMBERS</div>
         <div className="flex flex-row flex-wrap justify-center gap-10">
-          {membersList?.map((obj) => {
-            return (
-              <div key={obj.name} className="mb-10">
-                <MemberAvatar
-                  instagram_handle={obj.userName}
-                  name={obj.name}
-                  profile_url={obj.profileImage?.url}
-                  ridePatches={obj.ridePatches}
-                />
-              </div>
-            );
-          })}
+          {membersList
+            ?.slice()
+            ?.sort(
+              (a, b) =>
+                (b.ridePatches?.length || 0) - (a.ridePatches?.length || 0)
+            )
+            ?.map((obj) => {
+              return (
+                <div key={obj.name} className="mb-10">
+                  <MemberAvatar
+                    instagram_handle={obj.userName}
+                    name={obj.name}
+                    profile_url={obj.profileImage?.url}
+                    ridePatches={obj.ridePatches}
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
       <Footer />

@@ -14,7 +14,7 @@ export const hallOfFameListQuery = encodeURIComponent(`
 
 export const rideListQuery = encodeURIComponent(`
   query {
-    ridesList{
+    ridesList(first:1000){
       rideName,
       rideLogo{
         url

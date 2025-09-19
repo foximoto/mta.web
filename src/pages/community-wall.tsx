@@ -41,7 +41,7 @@ const CommunityWall = () => {
         {[...(hallOfFames ?? [])].reverse().map((i) => (
           <div
             key={i.id}
-            className="md:w-[250px] max-h-[600px] w-full flex-shrink-0 cursor-pointer"
+            className=" max-h-[600px] w-full flex-shrink-0 cursor-pointer"
             onClick={() => {
               (
                 document.querySelector("#my_modal_5") as HTMLDialogElement

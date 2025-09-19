@@ -42,7 +42,7 @@ const MemberAvatar: FC<Props> = ({
                     key={obj.url}
                     src={obj.url}
                     alt="ride patch"
-                    className="w-6 h-6 inline-block object-contain -m-0.5"
+                    className="w-6 h-6 inline-block object-contain mx-0.5"
                   />
                 ))}
 

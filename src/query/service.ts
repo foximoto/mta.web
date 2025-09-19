@@ -37,7 +37,7 @@ export const membersList = (memberName: string) => {
     bio,
     designation,
     userName,
-     ridePatches {
+    ridePatches(first:1000) {
       url
     }
   }
@@ -87,7 +87,7 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
     url
   }
   designation,
-  ridePatches {
+ ridePatches(first:1000) {
       url
     }
 }
@@ -103,7 +103,7 @@ export const founderQuery = encodeURIComponent(`
     url
   }
   designation,
-   ridePatches {
+ ridePatches(first:1000) {
       url
     }
 }
@@ -119,7 +119,7 @@ export const crewQuery = encodeURIComponent(`
     url
   }
   designation,
-   ridePatches {
+  ridePatches(first:1000) {
       url
     }
 }
@@ -135,7 +135,7 @@ export const membersQuery = encodeURIComponent(`
     url
   }
   designation,
-   ridePatches {
+  ridePatches(first:1000) {
       url
     }
 }

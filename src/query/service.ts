@@ -7,7 +7,8 @@ export const hallOfFameListQuery = encodeURIComponent(`
         id
         url
       }
-      description
+      description,
+      slug
     }
   }
 `);
@@ -166,7 +167,8 @@ export const getEventsQuery = () => {
         coverImage {
           url
         }
-        description
+        description,
+        slug
       }
     }
   `);
@@ -193,8 +195,42 @@ export const getPartnersQuery = () => {
    partners{
   logo{
     url
-  }
+  },
+  url
 }
 }
+  `);
+};
+
+export const communityWallQuery = (slug: string) => {
+  return encodeURIComponent(`
+    query {
+      hallOfFames(where: { slug: "${slug}" }) {
+        id
+        title
+        coverImage {
+          id
+          url
+        }
+        description
+      }
+    }
+  `);
+};
+
+export const eventsDetailsQuery = (slug: string) => {
+  return encodeURIComponent(`
+    query {
+      events(where: { slug: "${slug}" }) {
+        eventName
+        date
+        coverImage {
+          url
+        }
+        description,
+        slug
+      
+      }
+    }
   `);
 };

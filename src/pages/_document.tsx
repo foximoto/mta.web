@@ -1,5 +1,4 @@
-import { Bug } from "lucide-react";
-import { Html, Head, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -14,15 +13,6 @@ export default function Document() {
       <body className="antialiased">
         <Main />
         <NextScript />
-        <div className="fab">
-          <a
-            href="https://tally.so/r/nrXNZN"
-            className="btn btn-lg btn-circle bg-red-600 text-white"
-          >
-            <Bug />
-          </a>
-        </div>
-
         <script
           defer
           src="https://cloud.umami.is/script.js"

@@ -20,11 +20,13 @@ function Sponsors() {
       <div className="flex flex-wrap gap-6 items-center justify-center mt-6">
         {partnerList?.map((i) => (
           <React.Fragment key={i}>
-            <img
-              src={i?.logo?.url}
-              className="w-40 h-40 object-contain"
-              alt=""
-            />
+            <a href={i?.url || "#"}>
+              <img
+                src={i?.logo?.url}
+                className="w-40 h-40 object-contain"
+                alt=""
+              />
+            </a>
           </React.Fragment>
         ))}
       </div>

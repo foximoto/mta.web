@@ -1,6 +1,8 @@
 import {
   boardOfDirectorsQuery,
+  communityWallQuery,
   crewQuery,
+  eventsDetailsQuery,
   founderQuery,
   getBlogListQuery,
   getCalendarQuery,
@@ -106,6 +108,20 @@ export const useServices = () => {
     return response.data;
   };
 
+  const getSingleCommunityWallPost = async (slug: string) => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${communityWallQuery(slug)}`
+    );
+    return response.data?.data;
+  };
+
+  const getSingleEvent = async (slug: string) => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${eventsDetailsQuery(slug)}`
+    );
+    return response.data?.data;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
@@ -120,5 +136,7 @@ export const useServices = () => {
     getBlogList,
     getSingleBlog,
     getPartnersList,
+    getSingleCommunityWallPost,
+    getSingleEvent,
   };
 };

@@ -52,6 +52,7 @@ export type eventsDataType = {
     url: string;
   };
   description: string;
+  slug: string;
 };
 
 export type memberDetailsType = {
@@ -77,4 +78,5 @@ export type hallOfFamesType = {
     url: string;
   };
   description?: string;
+  slug?: string;
 };

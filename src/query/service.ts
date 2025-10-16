@@ -21,7 +21,8 @@ export const rideListQuery = encodeURIComponent(`
         url
       },
       slug,
-      order
+      order,
+      type
   }
 }
 `);

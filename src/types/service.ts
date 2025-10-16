@@ -7,6 +7,7 @@ export type rideListType = {
       };
       slug: string;
       order: number;
+      type: string;
     }[];
   };
 };

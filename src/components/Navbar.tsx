@@ -69,9 +69,14 @@ function Navbar() {
             Community Wall
           </button>
         </Link>
-        <Link href="/calendar">
+        {/* <Link href="/calendar">
           <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
             Calendar
+          </button>
+        </Link> */}
+        <Link href="/sponsors">
+          <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
+            Sponsors
           </button>
         </Link>
         <Link href="/blogs">

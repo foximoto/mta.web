@@ -3,7 +3,6 @@ import {
   communityWallQuery,
   crewQuery,
   eventsDetailsQuery,
-  founderQuery,
   getBlogListQuery,
   getCalendarQuery,
   getEventsQuery,
@@ -50,13 +49,6 @@ export const useServices = () => {
   const getBoardOfDirectorsList = async () => {
     const response = await axios.get(
       `${HYGRAPH_ENDPOINT}?query=${boardOfDirectorsQuery}`
-    );
-    return response?.data?.data?.membersList;
-  };
-
-  const getFounderList = async () => {
-    const response = await axios.get(
-      `${HYGRAPH_ENDPOINT}?query=${founderQuery}`
     );
     return response?.data?.data?.membersList;
   };
@@ -131,7 +123,6 @@ export const useServices = () => {
     getCalendarDates,
     getEventsList,
     getMemberDetails,
-    getFounderList,
     getCrewList,
     getBlogList,
     getSingleBlog,

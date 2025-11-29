@@ -23,8 +23,6 @@ function CommunityWallItems() {
         ? router.query.slug[0]
         : router.query.slug;
       getSingleEvent(slug).then((response) => {
-        console.log(response);
-
         setData(response?.events);
       });
     }

@@ -11,15 +11,10 @@ function Members() {
   const [boardOfDirectorsList, setBoardOfDirectorsList] =
     useState<Array<boardOfDirectorsType>>();
   const [membersList, setMembersList] = useState<Array<boardOfDirectorsType>>();
-  const [founder, setFounder] = useState<Array<boardOfDirectorsType>>();
   const [crew, setCrew] = useState<Array<boardOfDirectorsType>>();
 
-  const {
-    getBoardOfDirectorsList,
-    getMembersList,
-    getFounderList,
-    getCrewList,
-  } = useServices();
+  const { getBoardOfDirectorsList, getMembersList, getCrewList } =
+    useServices();
 
   useEffect(() => {
     getBoardOfDirectorsList().then((response) => {
@@ -28,37 +23,16 @@ function Members() {
     getMembersList().then((response) => {
       setMembersList(response);
     });
-    getFounderList().then((response) => {
-      setFounder(response);
-    });
     getCrewList().then((response) => {
       setCrew(response);
     });
   }, []);
-
-  console.log(crew);
 
   return (
     <div className="container mx-auto">
       <Meta title="Members" favicon="/favicon-home.ico" />
       <Navbar />
       <div className="p-2">
-        <div className="text-4xl font-semibold my-20 text-center">FOUNDER</div>
-        <div className="flex justify-center">
-          {founder?.map((obj) => {
-            return (
-              <div key={obj.name} className="mb-10">
-                <MemberAvatar
-                  instagram_handle={obj.userName}
-                  name={obj.name}
-                  profile_url={obj.profileImage?.url}
-                  designation={obj.designation}
-                  ridePatches={obj.ridePatches}
-                />
-              </div>
-            );
-          })}
-        </div>
         <div className="text-4xl font-semibold my-20 text-center">
           BOARD MEMBERS
         </div>

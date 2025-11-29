@@ -97,22 +97,6 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
 }
 `);
 
-export const founderQuery = encodeURIComponent(`
-  query {
-    membersList(where:{memberType:founder}){
-  name,
-  userName,
-  profileImage{
-    url
-  }
-  designation,
- ridePatches(first:1000) {
-      url
-    }
-}
-}
-`);
-
 export const crewQuery = encodeURIComponent(`
   query {
     membersList(where:{memberType:crew}){

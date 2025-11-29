@@ -16,7 +16,6 @@ function Events() {
   useEffect(() => {
     getEventsList().then((response) => {
       setEventList(response);
-      console.log(response);
     });
   }, []);
   return (

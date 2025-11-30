@@ -15,7 +15,7 @@ function Blogs() {
 
   useEffect(() => {
     getBlogList().then((response) => {
-      setBlogsList(response);
+      setBlogsList(response?.reverse());
     });
   }, []);
 
@@ -30,7 +30,11 @@ function Blogs() {
             <div className="p-2" key={i?.id}>
               <div className="card bg-base-100 rounded-none shadow-xl">
                 <figure>
-                  <img src={i?.coverImage?.url} alt="Shoes" />
+                  <img
+                    src={i?.coverImage?.url}
+                    alt="Shoes"
+                    className="h-[300px] w-full object-cover"
+                  />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{i?.blogName}</h2>

@@ -46,7 +46,6 @@ function Calendar() {
             ).then((response) => {
               setEvents(response);
             });
-            console.log(payload);
           }}
         />
       </div>

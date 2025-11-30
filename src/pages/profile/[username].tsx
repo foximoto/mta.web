@@ -24,7 +24,6 @@ function MemberProfile() {
       : router.query.username;
 
     if (username) {
-      console.log(username);
       getMemberDetails(username).then((response) => {
         setMemberData(response?.data?.members);
       });

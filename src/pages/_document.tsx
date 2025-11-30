@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en" data-theme="light">
       <Head>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <script
           defer
           src="https://cloud.umami.is/script.js"

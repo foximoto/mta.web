@@ -11,82 +11,34 @@ function Members() {
   const [boardOfDirectorsList, setBoardOfDirectorsList] =
     useState<Array<boardOfDirectorsType>>();
   const [membersList, setMembersList] = useState<Array<boardOfDirectorsType>>();
-  const [founder, setFounder] = useState<Array<boardOfDirectorsType>>();
   const [crew, setCrew] = useState<Array<boardOfDirectorsType>>();
 
-  const {
-    getBoardOfDirectorsList,
-    getMembersList,
-    getFounderList,
-    getCrewList,
-  } = useServices();
+  const { getBoardOfDirectorsList, getMembersList, getCrewList } =
+    useServices();
 
   useEffect(() => {
-    getBoardOfDirectorsList().then((response) => {
-      setBoardOfDirectorsList(response);
-    });
-    getMembersList().then((response) => {
-      setMembersList(response);
-    });
-    getFounderList().then((response) => {
-      setFounder(response);
-    });
-    getCrewList().then((response) => {
-      setCrew(response);
-    });
+    getBoardOfDirectorsList().then(setBoardOfDirectorsList);
+    getMembersList().then(setMembersList);
+    getCrewList().then(setCrew);
   }, []);
 
-  console.log(crew);
-
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <Meta title="Members" favicon="/favicon-home.ico" />
       <Navbar />
-      <div className="p-2">
-        <div className="text-4xl font-semibold my-20 text-center">FOUNDER</div>
-        <div className="flex justify-center">
-          {founder?.map((obj) => {
-            return (
-              <div key={obj.name} className="mb-10">
-                <MemberAvatar
-                  instagram_handle={obj.userName}
-                  name={obj.name}
-                  profile_url={obj.profileImage?.url}
-                  designation={obj.designation}
-                  ridePatches={obj.ridePatches}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div className="text-4xl font-semibold my-20 text-center">
+
+      <div className="p-2 mt-10">
+        {/* BOARD MEMBERS */}
+        <div className="text-3xl md:text-4xl font-semibold my-10 text-center">
           BOARD MEMBERS
         </div>
-        <div className="grid grid-cols-3 ">
-          {boardOfDirectorsList
-            ?.sort((a, b) => a.order - b.order)
-            .map((obj) => {
-              return (
-                <div key={obj.name} className="mb-10">
-                  <MemberAvatar
-                    instagram_handle={obj.userName}
-                    name={obj.name}
-                    profile_url={obj.profileImage?.url}
-                    designation={obj.designation}
-                    ridePatches={obj.ridePatches}
-                  />
-                </div>
-              );
-            })}
-        </div>
 
-        <div className="text-4xl font-semibold my-20 text-center">
-          RIDE CREW
-        </div>
-        <div className="flex justify-center">
-          {crew?.map((obj) => {
-            return (
-              <div key={obj.name} className="mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          {boardOfDirectorsList
+            ?.slice()
+            .sort((a, b) => a.order - b.order)
+            .map((obj) => (
+              <div key={obj.name} className="flex justify-center">
                 <MemberAvatar
                   instagram_handle={obj.userName}
                   name={obj.name}
@@ -95,32 +47,53 @@ function Members() {
                   ridePatches={obj.ridePatches}
                 />
               </div>
-            );
-          })}
+            ))}
         </div>
 
-        <div className="text-4xl font-semibold my-20 text-center">MEMBERS</div>
-        <div className="flex flex-row flex-wrap justify-center gap-10">
+        {/* RIDE CREW */}
+        <div className="text-3xl md:text-4xl font-semibold my-10 text-center">
+          RIDE CREW
+        </div>
+
+        <div className="flex justify-center">
+          {crew?.map((obj) => (
+            <div key={obj.name}>
+              <MemberAvatar
+                instagram_handle={obj.userName}
+                name={obj.name}
+                profile_url={obj.profileImage?.url}
+                designation={obj.designation}
+                ridePatches={obj.ridePatches}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* MEMBERS */}
+        <div className="text-3xl md:text-4xl font-semibold my-10 text-center">
+          MEMBERS
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 place-items-center">
           {membersList
             ?.slice()
             ?.sort(
               (a, b) =>
                 (b.ridePatches?.length || 0) - (a.ridePatches?.length || 0)
             )
-            ?.map((obj) => {
-              return (
-                <div key={obj.name} className="mb-10">
-                  <MemberAvatar
-                    instagram_handle={obj.userName}
-                    name={obj.name}
-                    profile_url={obj.profileImage?.url}
-                    ridePatches={obj.ridePatches}
-                  />
-                </div>
-              );
-            })}
+            ?.map((obj) => (
+              <div key={obj.name}>
+                <MemberAvatar
+                  instagram_handle={obj.userName}
+                  name={obj.name}
+                  profile_url={obj.profileImage?.url}
+                  ridePatches={obj.ridePatches}
+                />
+              </div>
+            ))}
         </div>
       </div>
+
       <Footer />
     </div>
   );

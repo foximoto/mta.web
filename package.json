@@ -12,6 +12,8 @@
     "@fullcalendar/core": "^6.1.15",
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/react": "^6.1.15",
+    "@reduxjs/toolkit": "^2.11.0",
+    "@supabase/supabase-js": "^2.86.0",
     "axios": "^1.8.1",
     "lucide-react": "^0.544.0",
     "moment": "^2.30.1",
@@ -19,7 +21,10 @@
     "nextjs-toploader": "^3.7.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-markdown": "^10.0.0"
+    "react-hook-form": "^7.67.0",
+    "react-hot-toast": "^2.6.0",
+    "react-markdown": "^10.0.0",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

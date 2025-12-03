@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
@@ -18,18 +19,7 @@ function ContactUs() {
           PIN:673001
         </div>
         <div>
-          <a
-            href="https://wa.link/yqy1v9"
-            className="btn bg-black text-yellow-500 mr-2 my-2"
-          >
-            Contact us on Whatsapp
-          </a>
-          <a
-            href="https://www.instagram.com/motorcycletourersassociation/"
-            className="btn bg-black text-yellow-500 mr-2 my-2"
-          >
-            Contact us on Instagram
-          </a>
+          <ContactForm />
         </div>
       </div>
       <Footer />

@@ -69,11 +69,16 @@ function Navbar() {
             Community Wall
           </button>
         </Link>
-        {/* <Link href="/calendar">
+        <Link href="/forum">
           <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
-            Calendar
+            Forum
           </button>
-        </Link> */}
+        </Link>
+        <Link href="/shop">
+          <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
+            Shop
+          </button>
+        </Link>
         <Link href="/sponsors">
           <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
             Sponsors
@@ -87,6 +92,11 @@ function Navbar() {
         <Link href="/contact-us">
           <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
             Contact us
+          </button>
+        </Link>
+        <Link href="/account">
+          <button className="text-gray-700 font-semibold hover:text-gray-900 px-4 py-2">
+            Account
           </button>
         </Link>
       </div>

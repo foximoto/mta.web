@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import JoinForm from "@/components/JoinForm";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import Meta from "@/meta/meta";
@@ -75,12 +76,8 @@ function JoinMta() {
 
         <p className="mb-6">Be a Motorcycle Tourer, Not Just A Rider!!</p>
 
-        <a
-          href="https://www.instagram.com/motorcycletourersassociation/"
-          className="btn btn-accent mb-6"
-        >
-          Contact on Instagram
-        </a>
+        <JoinForm />
+        <div className="h-20" />
       </div>
 
       <Footer />

@@ -4,9 +4,17 @@ import Spotlight from "@/components/Spotlight";
 import Navbar from "../components/Navbar";
 import Meta from "@/meta/meta";
 import Gallery from "@/components/gallery";
-import Sponsors from "@/components/Sponsors";
+import Partners from "@/components/Partners";
+import { useEffect } from "react";
+import useFetchContent from "@/hooks/useFetchContent";
 
 function Home() {
+  const { fetchPartners } = useFetchContent();
+
+  useEffect(() => {
+    fetchPartners();
+  }, []);
+
   return (
     <div className="container mx-auto">
       <Meta title="Home Page" favicon="/favicon-home.ico" />
@@ -29,7 +37,7 @@ function Home() {
         />
       </div>
       <JoinMta />
-      <Sponsors />
+      <Partners />
       {/* <CommunitySpotlight /> */}
 
       <Footer />

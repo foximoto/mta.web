@@ -28,6 +28,16 @@ function Footer() {
           </a>
         </div>
       </nav>
+      <div className="flex justify-center w-full">
+        Developed and Managed by
+        <a
+          href="https://www.instagram.com/foximoto/"
+          target="_blank"
+          className="text-slate-700 hover:underline hover:text-purple-700"
+        >
+          foximoto
+        </a>
+      </div>
     </footer>
   );
 }

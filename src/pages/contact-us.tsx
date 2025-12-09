@@ -7,7 +7,7 @@ import React from "react";
 function ContactUs() {
   return (
     <div className="container mx-auto">
-      <Meta title="Contact Us" favicon="/favicon-home.ico" />
+      <Meta title="Contact Us" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Contact Us" />
       <div className="grid md:grid-cols-2 px-2 py-10">

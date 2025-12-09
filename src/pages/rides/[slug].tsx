@@ -28,7 +28,7 @@ function RideDetail() {
 
   return (
     <div className="container mx-auto">
-      <Meta title="Rides" favicon="/favicon-home.ico" />
+      <Meta title="Rides" favicon="/favicon.ico" />
       <Navbar />
       {rideData && (
         <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10">

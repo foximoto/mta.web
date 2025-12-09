@@ -20,7 +20,7 @@ function Events() {
   }, []);
   return (
     <div className="container mx-auto">
-      <Meta title="Events" favicon="/favicon-home.ico" />
+      <Meta title="Events" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Events" />
 

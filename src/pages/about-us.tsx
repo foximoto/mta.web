@@ -8,7 +8,7 @@ import React from "react";
 function AboutUs() {
   return (
     <div className="container mx-auto">
-      <Meta title="About us" favicon="/favicon-home.ico" />
+      <Meta title="About us" favicon="/favicon.ico" />
       <Navbar />
       <div className="py-6">
         <PageHeader heading="About Us" />

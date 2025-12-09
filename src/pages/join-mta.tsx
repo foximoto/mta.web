@@ -7,7 +7,7 @@ import React from "react";
 function JoinMta() {
   return (
     <div>
-      <Meta title="Join MTA" favicon="/favicon-home.ico" />
+      <Meta title="Join MTA" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Join MTA" />
 

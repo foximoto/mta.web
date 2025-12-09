@@ -32,7 +32,7 @@ function MemberProfile() {
 
   return (
     <div className="container mx-auto">
-      <Meta title={memberData?.name || ""} favicon="/favicon-home.ico" />
+      <Meta title={memberData?.name || ""} favicon="/favicon.ico" />
       <Navbar />
       <div
         className="hero h-[400px] bg-cover bg-center"

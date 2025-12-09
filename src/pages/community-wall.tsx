@@ -22,7 +22,7 @@ const CommunityWall = () => {
 
   return (
     <div className="container mx-auto">
-      <Meta title="Community Wall" favicon="/favicon-home.ico" />
+      <Meta title="Community Wall" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Community Wall" />
 

@@ -24,7 +24,7 @@ function Members() {
 
   return (
     <div className="container mx-auto px-4">
-      <Meta title="Members" favicon="/favicon-home.ico" />
+      <Meta title="Members" favicon="/favicon.ico" />
       <Navbar />
 
       <div className="p-2 mt-10">

@@ -18,7 +18,7 @@ function Sponsors() {
   ];
   return (
     <div className="container mx-auto">
-      <Meta title="Home Page" favicon="/favicon-home.ico" />
+      <Meta title="Home Page" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Our Sponsors" />
       <div className="flex flex-row gap-8 items-center justify-center flex-wrap">

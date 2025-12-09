@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
@@ -32,7 +33,7 @@ function BlogView() {
 
   return (
     <div className="container mx-auto">
-      <Meta title="Blogs" favicon="/favicon-home.ico" />
+      <Meta title="Blogs" favicon="/favicon.ico" />
       <Navbar />
       <div className=" px-4 mx-auto py-20">
         <img
@@ -45,6 +46,21 @@ function BlogView() {
         <div className="markdown">
           <Markdown>{blogs?.content}</Markdown>
         </div>
+        <hr className="my-8" />
+        <Link href={`/profile/${blogs?.authorDetails?.userName}`}>
+          <div className="flex  flex-col justify-center gap-2">
+            {blogs?.authorDetails?.profileImage?.url && (
+              <img
+                src={blogs?.authorDetails?.profileImage?.url}
+                alt={blogs?.authorDetails?.name || "Author"}
+                className="w-16 h-16 object-cover rounded-full"
+              />
+            )}
+            <span className="text-xl font-semibold">
+              {blogs?.authorDetails?.name}
+            </span>
+          </div>
+        </Link>
       </div>
       <Footer />
     </div>

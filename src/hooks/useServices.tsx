@@ -1,4 +1,5 @@
 import {
+  achievementForUserQuery,
   boardOfDirectorsQuery,
   communityWallQuery,
   crewQuery,
@@ -114,6 +115,13 @@ export const useServices = () => {
     return response.data?.data;
   };
 
+  const getAchievementForUser = async (username: string) => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${achievementForUserQuery(username)}`
+    );
+    return response.data?.data;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
@@ -129,5 +137,6 @@ export const useServices = () => {
     getPartnersList,
     getSingleCommunityWallPost,
     getSingleEvent,
+    getAchievementForUser,
   };
 };

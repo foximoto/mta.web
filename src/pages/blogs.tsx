@@ -21,7 +21,7 @@ function Blogs() {
 
   return (
     <div className="container mx-auto">
-      <Meta title="Blogs" favicon="/favicon-home.ico" />
+      <Meta title="Blogs" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Blogs" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 mb-10">
@@ -38,7 +38,16 @@ function Blogs() {
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{i?.blogName}</h2>
-                  <p>By {i?.author} </p>
+                  <div className="flex items-center gap-2">
+                    {i?.authorDetails?.profileImage?.url && (
+                      <img
+                        src={i?.authorDetails?.profileImage?.url}
+                        alt={i?.authorDetails?.name || "Author"}
+                        className="w-8 h-8 rounded-full"
+                      />
+                    )}
+                    <span className="text-sm">{i?.authorDetails?.name}</span>
+                  </div>
                 </div>
               </div>
             </div>

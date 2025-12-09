@@ -9,7 +9,7 @@ import Sponsors from "@/components/Sponsors";
 function Home() {
   return (
     <div className="container mx-auto">
-      <Meta title="Home Page" favicon="/favicon-home.ico" />
+      <Meta title="Home Page" favicon="/favicon.ico" />
       <Navbar />
       <div className="w-screen relative left-1/2 -translate-x-1/2">
         <Spotlight />

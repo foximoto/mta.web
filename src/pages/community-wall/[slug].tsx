@@ -30,7 +30,7 @@ function CommunityWallItems() {
 
   return (
     <div className="container mx-auto">
-      <Meta title="Rides" favicon="/favicon-home.ico" />
+      <Meta title="Rides" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading={data?.title} />
       <div>

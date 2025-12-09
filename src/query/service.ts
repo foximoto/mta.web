@@ -74,7 +74,13 @@ blogs(where:{slug:"${slug}"}){
   coverImage{
     url
   }
-    author
+  authorDetails{
+      name,
+      profileImage{
+        url
+      },
+      userName
+    }
 }
 }
   `);
@@ -167,7 +173,12 @@ export const getBlogListQuery = () => {
     coverImage{
       url
     }
-    author,
+    authorDetails{
+      name,
+       profileImage{
+        url
+      },
+    }
     slug
   }
 }
@@ -217,5 +228,26 @@ export const eventsDetailsQuery = (slug: string) => {
       
       }
     }
+  `);
+};
+
+export const achievementForUserQuery = (username: string) => {
+  return encodeURIComponent(`
+  query {
+  achievements(where: { riderName: { userName: "${username}" } }) {
+    rideName
+    rideDetails {
+      rideName
+      rideLogo {
+        url
+      }
+      slug
+    }
+    rideImage {
+      id
+    }
+  }
+}
+
   `);
 };

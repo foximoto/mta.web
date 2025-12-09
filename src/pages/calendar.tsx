@@ -25,7 +25,7 @@ function Calendar() {
 
   return (
     <div className="container mx-auto">
-      <Meta title="Calendar" favicon="/favicon-home.ico" />
+      <Meta title="Calendar" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Ride Calendar" />
       {/* Responsive wrapper for FullCalendar */}

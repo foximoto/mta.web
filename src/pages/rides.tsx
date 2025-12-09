@@ -21,7 +21,7 @@ function Rides() {
 
   return (
     <div className="container mx-auto">
-      <Meta title="Rides" favicon="/favicon-home.ico" />
+      <Meta title="Rides" favicon="/favicon.ico" />
       <Navbar />
       <PageHeader heading="Endurance Rides" />
       <div className="py-0">

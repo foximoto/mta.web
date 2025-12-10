@@ -39,9 +39,6 @@ export const membersList = (memberName: string) => {
     bio,
     designation,
     userName,
-    ridePatches(first:1000) {
-      url
-    },
     polarstepUrl
   }
   }
@@ -245,6 +242,27 @@ export const achievementForUserQuery = (username: string) => {
     }
     rideImage {
       id
+    }
+  }
+}
+
+  `);
+};
+
+export const getMemberAchievementListQuery = (username: string) => {
+  return encodeURIComponent(`
+ query {
+  achievements(where: { riderName: { userName: "${username}" } }) {
+    rideName
+    rideDetails {
+      rideName
+      rideLogo {
+        url
+      }
+      slug
+    }
+    rideImage {
+      url
     }
   }
 }

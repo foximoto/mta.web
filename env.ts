@@ -1,2 +1,2 @@
 export const HYGRAPH_ENDPOINT =
-  "https://ap-south-1.cdn.hygraph.com/content/cm7hhwui1021y07wdp7qne1fc/master";
+  "https://ap-south-1.cdn.hygraph.com/content/cmj01dfdv00r307plh1u0hpel/master";

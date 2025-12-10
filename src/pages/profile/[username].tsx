@@ -2,6 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import Footer from "@/components/Footer";
+import MemberPatches from "@/components/MemberPatches";
 import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
@@ -67,6 +68,9 @@ function MemberProfile() {
           <div className="w-full md:w-2/3 mx-auto  my-10">
             <div className="px-4 md:col-span-2 markdown">
               <Markdown>{memberData?.bio}</Markdown>
+            </div>
+            <div>
+              <MemberPatches />
             </div>
             <div>
               {memberData?.ridePatches?.length

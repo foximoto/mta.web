@@ -1,7 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
@@ -22,7 +20,7 @@ function Rides() {
   return (
     <div className="container mx-auto">
       <Meta title="Rides" favicon="/favicon.ico" />
-      <Navbar />
+
       <PageHeader heading="Endurance Rides" />
       <div className="py-0">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -79,7 +77,6 @@ function Rides() {
         </div>
       </div>
       <div className="h-20" />
-      <Footer />
     </div>
   );
 }

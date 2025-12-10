@@ -1,3 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useServices } from "@/hooks/useServices";
 import { useRouter } from "next/router";
 import React, { FC, useEffect, useState } from "react";
@@ -15,7 +19,7 @@ const MemberPatches: FC = () => {
       ? router.query.username[0]
       : router.query.username;
 
-    getAchievementForUser(username).then((response) => {
+    getAchievementForUser(username as string).then((response) => {
       setPatchDetails(response);
     });
   }, [router.isReady, router.query.username]);
@@ -24,7 +28,7 @@ const MemberPatches: FC = () => {
 
   return (
     <div>
-      {patchDetails?.achievements?.map((obj) => {
+      {patchDetails?.achievements?.map((obj: any) => {
         console.log(obj);
 
         return (

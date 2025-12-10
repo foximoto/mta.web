@@ -2,8 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import Link from "next/link";
@@ -34,7 +32,7 @@ function BlogView() {
   return (
     <div className="container mx-auto">
       <Meta title="Blogs" favicon="/favicon.ico" />
-      <Navbar />
+
       <div className=" px-4 mx-auto py-20">
         <img
           src={blogs?.coverImage?.url}
@@ -62,7 +60,6 @@ function BlogView() {
           </div>
         </Link>
       </div>
-      <Footer />
     </div>
   );
 }

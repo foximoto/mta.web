@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
@@ -22,7 +20,7 @@ function Blogs() {
   return (
     <div className="container mx-auto">
       <Meta title="Blogs" favicon="/favicon.ico" />
-      <Navbar />
+
       <PageHeader heading="Blogs" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 mb-10">
         {blogsList?.map((i) => (
@@ -54,7 +52,6 @@ function Blogs() {
           </Link>
         ))}
       </div>
-      <Footer />
     </div>
   );
 }

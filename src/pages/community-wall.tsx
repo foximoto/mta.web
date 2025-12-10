@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
@@ -23,7 +21,7 @@ const CommunityWall = () => {
   return (
     <div className="container mx-auto">
       <Meta title="Community Wall" favicon="/favicon.ico" />
-      <Navbar />
+
       <PageHeader heading="Community Wall" />
 
       <div className="flex flex-wrap space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
@@ -46,7 +44,6 @@ const CommunityWall = () => {
           </Link>
         ))}
       </div>
-      <Footer />
     </div>
   );
 };

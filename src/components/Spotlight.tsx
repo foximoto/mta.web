@@ -20,9 +20,9 @@ function Spotlight() {
   }, [images.length]);
 
   return (
-    <div className="container mx-auto">
+    <div>
       <div
-        className="hero h-[600px]"
+        className="hero h-[800px]"
         style={{
           backgroundImage: `url(${images[currentImageIndex]})`,
           transition: "background-image 1s ease-in-out",

@@ -1,14 +1,11 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import Meta from "@/meta/meta";
-import React from "react";
 
 function ContactUs() {
   return (
     <div className="container mx-auto">
       <Meta title="Contact Us" favicon="/favicon.ico" />
-      <Navbar />
+
       <PageHeader heading="Contact Us" />
       <div className="grid md:grid-cols-2 px-2 py-10">
         <div className="text-2xl leading-relaxed">
@@ -32,7 +29,6 @@ function ContactUs() {
           </a>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

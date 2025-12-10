@@ -2,13 +2,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 function CommunityWallItems() {
@@ -31,7 +29,6 @@ function CommunityWallItems() {
   return (
     <div className="container mx-auto">
       <Meta title="Rides" favicon="/favicon.ico" />
-      <Navbar />
       <PageHeader heading={data?.title} />
       <div>
         <img
@@ -43,7 +40,6 @@ function CommunityWallItems() {
           <Markdown>{data?.description}</Markdown>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,14 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import Footer from "@/components/Footer";
 import MemberPatches from "@/components/MemberPatches";
-import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { memberDetailsType } from "@/types/service";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 function MemberProfile() {
@@ -34,7 +32,7 @@ function MemberProfile() {
   return (
     <div className="container mx-auto">
       <Meta title={memberData?.name || ""} favicon="/favicon.ico" />
-      <Navbar />
+
       <div
         className="hero h-[400px] bg-cover bg-center"
         style={{
@@ -97,8 +95,6 @@ function MemberProfile() {
           frameBorder="0"
         ></iframe>
       )}
-
-      <Footer />
     </div>
   );
 }

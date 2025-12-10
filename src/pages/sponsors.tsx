@@ -1,9 +1,6 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import Meta from "@/meta/meta";
 import Link from "next/link";
-import React from "react";
 
 function Sponsors() {
   const sponsorList = [
@@ -19,7 +16,7 @@ function Sponsors() {
   return (
     <div className="container mx-auto">
       <Meta title="Home Page" favicon="/favicon.ico" />
-      <Navbar />
+
       <PageHeader heading="Our Sponsors" />
       <div className="flex flex-row gap-8 items-center justify-center flex-wrap">
         {sponsorList.map((i) => (
@@ -31,7 +28,6 @@ function Sponsors() {
           </Link>
         ))}
       </div>
-      <Footer />
     </div>
   );
 }

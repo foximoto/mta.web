@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import React, { useEffect, useState } from "react";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
 import { useServices } from "@/hooks/useServices";
-import { calendarDataType } from "@/types/service";
-import moment from "moment";
 import Meta from "@/meta/meta";
+import { calendarDataType } from "@/types/service";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import FullCalendar from "@fullcalendar/react";
+import moment from "moment";
+import { useEffect, useState } from "react";
 
 function Calendar() {
   const [events, setEvents] = useState<Array<calendarDataType>>();
@@ -26,7 +24,6 @@ function Calendar() {
   return (
     <div className="container mx-auto">
       <Meta title="Calendar" favicon="/favicon.ico" />
-      <Navbar />
       <PageHeader heading="Ride Calendar" />
       {/* Responsive wrapper for FullCalendar */}
       <div className="w-full px-4 py-5">
@@ -49,7 +46,6 @@ function Calendar() {
           }}
         />
       </div>
-      <Footer />
     </div>
   );
 }

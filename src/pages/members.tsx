@@ -1,7 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Footer from "@/components/Footer";
 import MemberAvatar from "@/components/MemberAvatar";
-import Navbar from "@/components/Navbar";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { boardOfDirectorsType } from "@/types/service";
@@ -25,7 +23,6 @@ function Members() {
   return (
     <div className="container mx-auto px-4">
       <Meta title="Members" favicon="/favicon.ico" />
-      <Navbar />
 
       <div className="p-2 mt-10">
         {/* BOARD MEMBERS */}
@@ -93,8 +90,6 @@ function Members() {
             ))}
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

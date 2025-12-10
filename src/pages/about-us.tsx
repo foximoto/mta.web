@@ -1,15 +1,12 @@
-import Footer from "@/components/Footer";
 import JoinMta from "@/components/JoinMta";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import Meta from "@/meta/meta";
-import React from "react";
 
 function AboutUs() {
   return (
     <div className="container mx-auto">
       <Meta title="About us" favicon="/favicon.ico" />
-      <Navbar />
+
       <div className="py-6">
         <PageHeader heading="About Us" />
         <div className="text-lg leading-[30px] mt-4 p-2 md:p-5 text-justify">
@@ -40,7 +37,6 @@ function AboutUs() {
         </div>
         <JoinMta />
       </div>
-      <Footer />
     </div>
   );
 }

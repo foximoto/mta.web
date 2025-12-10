@@ -1,14 +1,11 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import Meta from "@/meta/meta";
-import React from "react";
 
 function JoinMta() {
   return (
     <div>
       <Meta title="Join MTA" favicon="/favicon.ico" />
-      <Navbar />
+
       <PageHeader heading="Join MTA" />
 
       <div className="w-[90%] mx-auto md:w-2/3">
@@ -82,8 +79,6 @@ function JoinMta() {
           Contact on Instagram
         </a>
       </div>
-
-      <Footer />
     </div>
   );
 }

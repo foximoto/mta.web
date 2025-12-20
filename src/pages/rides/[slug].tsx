@@ -9,6 +9,14 @@ import Markdown from "react-markdown";
 
 function RideDetail() {
   const [rideData, setRideData] = useState<rideDetailsType>();
+  const [riderDetails, setRiderDetails] = useState<
+    {
+      bike: string;
+      home_town: string;
+      member: string;
+      year: number;
+    }[]
+  >();
   const router = useRouter();
 
   useEffect(() => {
@@ -18,6 +26,7 @@ function RideDetail() {
         : router.query.slug;
 
       getData(slug);
+      getRiderDetails(slug);
     }
   }, [router.isReady, router.query.slug]);
 
@@ -28,6 +37,15 @@ function RideDetail() {
       .eq("slug", slug);
 
     setRideData(data?.[0]);
+  };
+
+  const getRiderDetails = async (slug: string) => {
+    let { data, error } = await supabaseClient
+      .from("achievements")
+      .select("bike,home_town,member,year")
+      .eq("ride", slug);
+
+    data && setRiderDetails(data);
   };
 
   return (
@@ -62,12 +80,12 @@ function RideDetail() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {rideData?.completedRiders?.map((obj, index) => (
-              <tr className="hover:bg-gray-50" key={obj.name + index}>
-                <td className="px-4 py-2">{obj?.name}</td>
+            {riderDetails?.map((obj, index) => (
+              <tr className="hover:bg-gray-50" key={obj.member + index}>
+                <td className="px-4 py-2">{obj?.member}</td>
                 <td className="px-4 py-2">{obj?.year}</td>
-                <td className="px-4 py-2">{obj?.location}</td>
-                <td className="px-4 py-2">{obj?.motorcycle}</td>
+                <td className="px-4 py-2">{obj?.home_town}</td>
+                <td className="px-4 py-2">{obj?.bike}</td>
               </tr>
             ))}
           </tbody>

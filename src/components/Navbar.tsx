@@ -24,6 +24,7 @@ const NAV_LINKS = [
       { href: "/forum", label: "Forum" },
       { href: "/community-wall", label: "Community Wall" },
       { href: "/blogs", label: "Blogs" },
+      { href: "/calendar", label: "Calendar" },
     ],
   },
 

@@ -29,13 +29,10 @@ export type calendarDataType = {
 };
 
 export type eventsDataType = {
-  eventName: string;
-  date: string;
-  coverImage: {
-    url: string;
-  };
-  description: string;
+  cover_image: string;
+  event_name: string;
   slug: string;
+  date: string;
 };
 
 export type memberDetailsType = {

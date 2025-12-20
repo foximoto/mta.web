@@ -1,31 +1,13 @@
 export type rideListType = {
-  data: {
-    ridesList: {
-      rideName: string;
-      rideLogo: {
-        url: string;
-      };
-      slug: string;
-      order: number;
-      type: string;
-    }[];
-  };
+  ride_logo: string;
+  ride_name: string;
+  ride_type: string;
+  slug: string;
 };
 
 export type rideDetailsType = {
-  rideName: string;
-  rideLogo: {
-    url: string;
-  };
-  slug: string;
-  details: string;
-  registrationOpen: boolean;
-  completedRiders: {
-    name: string;
-    year: string;
-    location: string;
-    motorcycle: string;
-  }[];
+  description: string;
+  ride_name: string;
 };
 
 export type boardOfDirectorsType = {

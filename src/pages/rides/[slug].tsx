@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import { useServices } from "@/hooks/useServices";
+import { supabaseClient } from "@/config/supabase";
 import Meta from "@/meta/meta";
 import { rideDetailsType } from "@/types/service";
 import { useRouter } from "next/router";
@@ -13,18 +11,24 @@ function RideDetail() {
   const [rideData, setRideData] = useState<rideDetailsType>();
   const router = useRouter();
 
-  const { getRideDetails } = useServices();
-
   useEffect(() => {
     if (router?.query?.slug) {
       const slug = Array.isArray(router.query.slug)
         ? router.query.slug[0]
         : router.query.slug;
-      getRideDetails(slug).then((response) => {
-        setRideData(response?.data?.rides);
-      });
+
+      getData(slug);
     }
   }, [router.isReady, router.query.slug]);
+
+  const getData = async (slug: string) => {
+    const { data, error } = await supabaseClient
+      .from("mta_rides")
+      .select("ride_name, description")
+      .eq("slug", slug);
+
+    setRideData(data?.[0]);
+  };
 
   return (
     <div className="container mx-auto">
@@ -32,9 +36,9 @@ function RideDetail() {
 
       {rideData && (
         <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10">
-          <PageHeader heading={rideData?.rideName} />
+          <PageHeader heading={rideData?.ride_name} />
           <div className="markdown">
-            <Markdown>{rideData?.details}</Markdown>
+            <Markdown>{rideData?.description}</Markdown>
           </div>
         </div>
       )}

@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import { User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { User } from "lucide-react";
-
-// Rebuilt responsive Navbar with "two-side" layout:
-// - Left: brand (logo + title)
-// - Right: navigation links and account button
-// - Mobile: collapsible menu (hamburger)
+import { useState } from "react";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
   {
     label: "Who we are?",
     submenu: [
@@ -58,7 +52,7 @@ export default function Navbar() {
                 />
               </span>
               <div className="ml-3 hidden md:block">
-                <h1 className="text-lg md:text-2xl font-bold uppercase leading-tight text-nowrap">
+                <h1 className="text-lg md:text-2xl font-bold leading-tight text-nowrap">
                   Motorcycle Tourers Association
                 </h1>
               </div>

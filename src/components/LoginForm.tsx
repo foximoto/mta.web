@@ -1,7 +1,4 @@
-import { app } from "@/config/firebase";
-import React, { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import toast from "react-hot-toast";
+import { useState } from "react";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -10,14 +7,7 @@ const LoginForm = () => {
   });
 
   const onLogin = () => {
-    const auth = getAuth(app);
-    signInWithEmailAndPassword(auth, formData.email, formData.password)
-      .then(() => {
-        toast.success("login success");
-      })
-      .catch(() => {
-        toast.error("Invalid credentials");
-      });
+    //
   };
 
   return (

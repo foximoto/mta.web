@@ -92,10 +92,7 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation,
- ridePatches(first:1000) {
-      url
-    }
+  designation
 }
 }
 `);
@@ -108,10 +105,7 @@ export const crewQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation,
-  ridePatches(first:1000) {
-      url
-    }
+  designation
 }
 }
 `);
@@ -124,10 +118,7 @@ export const membersQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation,
-  ridePatches(first:1000) {
-      url
-    }
+  designation
 }
 }
 `);

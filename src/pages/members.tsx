@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import MemberAvatar from "@/components/MemberAvatar";
+import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { boardOfDirectorsType } from "@/types/service";
@@ -21,16 +22,21 @@ function Members() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4">
+    <div>
       <Meta title="Members" favicon="/favicon.ico" />
+      <PageHeader
+        headingFirst="Our"
+        headingSecond="Members"
+        description="Our members are the backbone of this community"
+      />
 
-      <div className="p-2 mt-10">
+      <div className="py-20 mx-auto container">
         {/* BOARD MEMBERS */}
-        <div className="text-3xl md:text-4xl font-semibold my-10 text-center">
+        <div className="text-3xl md:text-4xl font-semibold my-10 ">
           BOARD MEMBERS
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="flex flex-row flex-wrap gap-10">
           {boardOfDirectorsList
             ?.slice()
             .sort((a, b) => a.order - b.order)
@@ -48,11 +54,11 @@ function Members() {
         </div>
 
         {/* RIDE CREW */}
-        <div className="text-3xl md:text-4xl font-semibold my-10 text-center">
+        <div className="text-3xl md:text-4xl font-semibold my-10 ">
           RIDE CREW
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex ">
           {crew?.map((obj) => (
             <div key={obj.name}>
               <MemberAvatar
@@ -67,11 +73,9 @@ function Members() {
         </div>
 
         {/* MEMBERS */}
-        <div className="text-3xl md:text-4xl font-semibold my-10 text-center">
-          MEMBERS
-        </div>
+        <div className="text-3xl md:text-4xl font-semibold my-10 ">MEMBERS</div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 place-items-center">
+        <div className="flex flex-row flex-wrap gap-10">
           {membersList
             ?.slice()
             ?.sort(

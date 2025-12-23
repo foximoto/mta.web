@@ -5,9 +5,9 @@ import Meta from "@/meta/meta";
 
 const Account = () => {
   return (
-    <div className="container mx-auto">
+    <div>
       <Meta title="About us" favicon="/favicon.ico" />
-      <PageHeader heading="Account" />
+      <PageHeader description="" headingFirst="Your" headingSecond="Account" />
       <LoginForm />
       <div>
         <div role="tablist" className="tabs tabs-box">

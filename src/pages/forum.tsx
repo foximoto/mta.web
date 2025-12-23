@@ -2,8 +2,12 @@ import PageHeader from "@/components/PageHeader";
 
 const Forum = () => {
   return (
-    <div className="container mx-auto">
-      <PageHeader heading="Forum" />
+    <div>
+      <PageHeader
+        headingFirst="Community"
+        headingSecond="Forum"
+        description="Connect, share, and learn from fellow riders"
+      />
     </div>
   );
 };

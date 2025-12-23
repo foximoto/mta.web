@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const NAV_LINKS = [
+  { href: "/", label: "Home" },
   {
     label: "Who we are?",
     submenu: [
@@ -30,14 +31,13 @@ const NAV_LINKS = [
 
   { href: "/shop", label: "Shop" },
   { href: "/sponsors", label: "Sponsors" },
-  { href: "/contact-us", label: "Contact us" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-white shadow-sm">
+    <header className="w-full bg-black text-white shadow-sm">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Left side: brand */}
@@ -69,16 +69,19 @@ export default function Navbar() {
                   <li key={link.label} className="relative group">
                     <button
                       type="button"
-                      className="px-4 py-2 text-gray-700 font-semibold hover:text-gray-900 text-nowrap"
+                      className="px-4 py-2 text-gray-700 font-semibold hover:text-white text-nowrap"
                     >
                       {link.label}
                     </button>
 
                     {/* simple dropdown on hover */}
-                    <ul className="absolute hidden group-hover:block top-full left-0  w-48 bg-white rounded-md shadow-md z-20 py-2">
+                    <ul className="absolute hidden group-hover:block top-full left-0  w-48 bg-black shadow-md z-20 py-2">
                       {link.submenu.map((s) => (
-                        <li key={s.href} className="px-3 py-1 hover:bg-gray-50">
-                          <Link href={s.href} className="block text-gray-700">
+                        <li key={s.href} className="px-3 py-1 ">
+                          <Link
+                            href={s.href}
+                            className="block text-gray-700 hover:text-white"
+                          >
                             {s.label}
                           </Link>
                         </li>
@@ -88,7 +91,7 @@ export default function Navbar() {
                 ) : (
                   <li key={(link.href ?? link.label) as string}>
                     <Link href={link.href as string}>
-                      <button className="px-4 py-2 text-gray-700 font-semibold hover:text-gray-900">
+                      <button className="px-4 py-2 text-gray-700 font-semibold hover:text-white">
                         {link.label}
                       </button>
                     </Link>
@@ -100,7 +103,7 @@ export default function Navbar() {
             {/* account button */}
             <div className="ml-2">
               <Link href="/account">
-                <button className="px-4 py-2 rounded-md   text-sm font-medium hover:bg-gray-50">
+                <button className="px-4 py-2 rounded-md   text-sm font-medium hover:bg-gray-800">
                   <User />
                 </button>
               </Link>

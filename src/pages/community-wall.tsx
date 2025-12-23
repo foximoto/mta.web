@@ -19,30 +19,36 @@ const CommunityWall = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div>
       <Meta title="Community Wall" favicon="/favicon.ico" />
 
-      <PageHeader heading="Community Wall" />
+      <PageHeader
+        headingFirst="Community"
+        headingSecond="Wall"
+        description="Stories, experiences, and adventures from our riding family"
+      />
 
-      <div className="flex flex-wrap space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
-        {[...(hallOfFames ?? [])].reverse().map((i) => (
-          <Link href={`/community-wall/${i?.slug}`} key={i.id}>
-            <div className=" max-h-[600px] w-full flex-shrink-0 cursor-pointer">
-              <div className="card rounded-none bg-base-100 shadow-lg">
-                <figure>
-                  <img
-                    className="w-full h-[300px] object-cover"
-                    src={i?.coverImage?.url}
-                    alt="hall of fame"
-                  />
-                </figure>
-                <div className="card-body h-[200px]">
-                  <h3 className="card-title">{i?.title}</h3>
+      <div className="container mx-auto py-20">
+        <div className="flex flex-wrap space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
+          {[...(hallOfFames ?? [])].reverse().map((i) => (
+            <Link href={`/community-wall/${i?.slug}`} key={i.id}>
+              <div className=" max-h-[600px] w-full flex-shrink-0 cursor-pointer">
+                <div className="card rounded-none bg-[#121212] shadow-lg">
+                  <figure>
+                    <img
+                      className="w-full h-[300px] object-cover"
+                      src={i?.coverImage?.url}
+                      alt="hall of fame"
+                    />
+                  </figure>
+                  <div className="card-body h-[200px]">
+                    <h3 className="card-title">{i?.title}</h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

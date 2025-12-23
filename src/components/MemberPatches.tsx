@@ -28,6 +28,7 @@ const MemberPatches: FC = () => {
 
   return (
     <div>
+      <div className="text-2xl font-semibold mt-6">Member Patches</div>
       {patchDetails?.achievements?.map((obj: any) => {
         console.log(obj);
 
@@ -36,7 +37,7 @@ const MemberPatches: FC = () => {
             key={obj.url}
             src={obj.rideDetails?.rideLogo?.url || obj?.rideImage?.url}
             alt="ride patch"
-            className="w-32 h-32 inline-block object-cover m-2"
+            className="w-20 h-20 inline-block object-cover m-2"
           />
         );
       })}

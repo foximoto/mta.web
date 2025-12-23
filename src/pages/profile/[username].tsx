@@ -2,9 +2,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import MemberPatches from "@/components/MemberPatches";
+import PageHeader from "@/components/PageHeader";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { memberDetailsType } from "@/types/service";
+import { Instagram } from "lucide-react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
@@ -30,70 +32,53 @@ function MemberProfile() {
   }, [router.isReady, router.query.username]);
 
   return (
-    <div className="container mx-auto">
+    <div>
       <Meta title={memberData?.name || ""} favicon="/favicon.ico" />
-
-      <div
-        className="hero h-[400px] bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url(https://i.ibb.co/cXQJcM0S/Whats-App-Image-2025-02-27-at-12-33-12-AM.jpg)",
-        }}
+      <PageHeader
+        description="Every members are valuable for MTA"
+        headingFirst="Our Proud"
+        headingSecond="Member"
       />
       {memberData && (
-        <>
-          <div className="flex justify-center items-center">
+        <div className="flex flex-row container mx-auto py-20">
+          <div className="w-[400px]">
             <img
+              src={memberData?.profileImage?.url}
+              className="h-[400px] w-[400px] object-cover"
               alt=""
-              src={memberData?.profileImage?.url || "/placeholder.png"}
-              className="avatar w-60 h-60 rounded-full mt-[-120px] border-2 border-white object-cover "
             />
-          </div>
-          <div className="text-3xl font-semibold text-center mt-6">
-            {memberData.name}
-          </div>
-          <a
-            href={`https://instagram.com/${memberData.userName}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex items-center justify-center mt-2">
-              <img src="/icons/instagram.svg" className="w-4 h-4" alt="" />
-              <div className="text-xs">{memberData.userName}</div>
-            </div>
-          </a>
-
-          <div className="w-full md:w-2/3 mx-auto  my-10">
-            <div className="px-4 md:col-span-2 markdown">
-              <Markdown>{memberData?.bio}</Markdown>
-            </div>
             <div>
               <MemberPatches />
             </div>
             <div>
-              {memberData?.ridePatches?.length
-                ? memberData?.ridePatches?.map((obj) => {
-                    return (
-                      <img
-                        key={obj.url}
-                        src={obj.url}
-                        alt="ride patch"
-                        className="w-32 h-32 inline-block object-cover m-2"
-                      />
-                    );
-                  })
-                : null}
+              <div className="text-2xl font-semibold mt-6 mb-2">Social</div>
+              <a
+                href={`https://instagram.com/${memberData.userName}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram />
+              </a>
             </div>
           </div>
-        </>
-      )}
-      {memberData?.polarstepUrl && (
-        <iframe
-          src={memberData?.polarstepUrl}
-          title="Example Website"
-          className="w-full h-[600px]"
-          frameBorder="0"
-        ></iframe>
+          <div className="flex-1 px-6">
+            <div className="text-2xl font-semibold">
+              {memberData?.name} aka{" "}
+              <span className="italic font-light">Fox</span>
+            </div>
+            <div className=" markdown">
+              <Markdown>{memberData?.bio}</Markdown>
+            </div>
+            {memberData?.polarstepUrl && (
+              <iframe
+                src={memberData?.polarstepUrl}
+                title="Example Website"
+                className="w-full h-[600px]"
+                frameBorder="0"
+              ></iframe>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );

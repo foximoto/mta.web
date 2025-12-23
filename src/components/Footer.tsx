@@ -71,7 +71,7 @@ function Footer() {
             </li>
             <li className="flex gap-3">
               <span className="text-red-500">✉️</span>
-              info@mtaindia.com
+              mail@motorcycletourersassociation.org
             </li>
           </ul>
         </div>

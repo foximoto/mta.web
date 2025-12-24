@@ -2,40 +2,47 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useServices } from "@/hooks/useServices";
+import { supabaseClient } from "@/config/supabase";
 import { useRouter } from "next/router";
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
-const MemberPatches: FC = () => {
-  const [patchDetails, setPatchDetails] = useState<any>();
+interface Props {
+  userName: string;
+}
+
+const MemberPatches: FC<Props> = ({ userName }) => {
+  const [patchData, setPatchData] = useState<
+    {
+      mta_rides: {
+        ride_logo: any;
+      };
+    }[]
+  >();
   const router = useRouter();
 
-  const { getAchievementForUser } = useServices();
-
   useEffect(() => {
-    if (!router.isReady) return;
+    userName && getData();
+  }, [userName]);
 
-    const username = Array.isArray(router.query.username)
-      ? router.query.username[0]
-      : router.query.username;
+  const getData = async () => {
+    let { data: achievements, error } = await supabaseClient
+      .from("achievements")
+      .select("mta_rides(ride_logo)")
+      .eq("member", userName);
 
-    getAchievementForUser(username as string).then((response) => {
-      setPatchDetails(response);
-    });
-  }, [router.isReady, router.query.username]);
-
-  console.log({ patchDetails });
+    setPatchData(achievements as any);
+  };
 
   return (
     <div>
-      <div className="text-2xl font-semibold mt-6">Member Patches</div>
-      {patchDetails?.achievements?.map((obj: any) => {
+      <div className="text-2xl font-semibold mt-6">Achievement Patches</div>
+      {patchData?.map((obj: any) => {
         console.log(obj);
 
         return (
           <img
             key={obj.url}
-            src={obj.rideDetails?.rideLogo?.url || obj?.rideImage?.url}
+            src={obj.mta_rides?.ride_logo}
             alt="ride patch"
             className="w-20 h-20 inline-block object-cover m-2"
           />

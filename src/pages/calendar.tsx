@@ -24,7 +24,7 @@ function Calendar() {
   return (
     <div className="container mx-auto">
       <Meta title="Calendar" favicon="/favicon.ico" />
-      <PageHeader heading="Ride Calendar" />
+      {/* <PageHeader heading="Ride Calendar" /> */}
       {/* Responsive wrapper for FullCalendar */}
       <div className="w-full px-4 py-5">
         <FullCalendar

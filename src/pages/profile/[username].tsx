@@ -3,19 +3,29 @@
 
 import MemberPatches from "@/components/MemberPatches";
 import PageHeader from "@/components/PageHeader";
-import { useServices } from "@/hooks/useServices";
+import { supabaseClient } from "@/config/supabase";
 import Meta from "@/meta/meta";
-import { memberDetailsType } from "@/types/service";
 import { Instagram } from "lucide-react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 function MemberProfile() {
-  const [memberData, setMemberData] = useState<memberDetailsType>();
+  const [userData, setUserData] = useState<{
+    id: number;
+    created_at: string;
+    name: string;
+    auth_id: string;
+    insta_username: string;
+    polarstep_url: string;
+    profile_image: string;
+    member_type: string;
+    designation: string;
+    rider_bio: string;
+    designation_order: number;
+    road_name: string;
+  }>();
   const router = useRouter();
-
-  const { getMemberDetails } = useServices();
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -25,35 +35,41 @@ function MemberProfile() {
       : router.query.username;
 
     if (username) {
-      getMemberDetails(username).then((response) => {
-        setMemberData(response?.data?.members);
-      });
+      getData(username);
     }
   }, [router.isReady, router.query.username]);
 
+  const getData = async (slug: string) => {
+    let { data: members, error } = await supabaseClient
+      .from("members")
+      .select("*")
+      .eq("insta_username", slug);
+    setUserData(members?.[0]);
+  };
+
   return (
     <div>
-      <Meta title={memberData?.name || ""} favicon="/favicon.ico" />
+      <Meta title={userData?.name || ""} favicon="/favicon.ico" />
       <PageHeader
         description="Every members are valuable for MTA"
         headingFirst="Our Proud"
         headingSecond="Member"
       />
-      {memberData && (
+      {userData && (
         <div className="flex flex-row container mx-auto py-20">
           <div className="w-[400px]">
             <img
-              src={memberData?.profileImage?.url}
+              src={userData?.profile_image}
               className="h-[400px] w-[400px] object-cover"
               alt=""
             />
             <div>
-              <MemberPatches />
+              <MemberPatches userName={userData?.name} />
             </div>
             <div>
               <div className="text-2xl font-semibold mt-6 mb-2">Social</div>
               <a
-                href={`https://instagram.com/${memberData.userName}`}
+                href={`https://instagram.com/${userData?.insta_username}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -63,15 +79,15 @@ function MemberProfile() {
           </div>
           <div className="flex-1 px-6">
             <div className="text-2xl font-semibold">
-              {memberData?.name} aka{" "}
-              <span className="italic font-light">Fox</span>
+              {userData?.name}{" "}
+              {userData?.road_name && ` aka ${userData?.road_name}`}
             </div>
             <div className=" markdown">
-              <Markdown>{memberData?.bio}</Markdown>
+              <Markdown>{userData?.rider_bio}</Markdown>
             </div>
-            {memberData?.polarstepUrl && (
+            {userData?.polarstep_url && (
               <iframe
-                src={memberData?.polarstepUrl}
+                src={userData?.polarstep_url}
                 title="Example Website"
                 className="w-full h-[600px]"
                 frameBorder="0"

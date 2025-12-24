@@ -11,14 +11,22 @@ const PageHeader: FC<Props> = ({
   headingSecond,
   description,
 }) => {
+  const bgRender = () => {
+    const images = [
+      "url('https://images.unsplash.com/photo-1690540293130-2ca04fbf815b')",
+      "url('https://images.unsplash.com/photo-1761162840858-95ae070773d4')",
+      "url('https://images.unsplash.com/photo-1762178123902-44ceedef48a6')",
+      "url('https://images.unsplash.com/photo-1764205821282-f28dd0e36c3c')",
+    ];
+    return images[Math.floor(Math.random() * images.length)];
+  };
   return (
     <section className="relative w-full min-h-[60vh] md:min-h-[500px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1690540293130-2ca04fbf815b')",
+          backgroundImage: bgRender(),
         }}
       />
 

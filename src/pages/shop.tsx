@@ -3,7 +3,7 @@ import PageHeader from "@/components/PageHeader";
 const Shop = () => {
   return (
     <div className="container mx-auto">
-      <PageHeader heading="Shop" />
+      {/* <PageHeader heading="Shop" /> */}
       <div className="flex flex-row flex-wrap justify-center gap-6 pb-10">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((obj) => {
           return (

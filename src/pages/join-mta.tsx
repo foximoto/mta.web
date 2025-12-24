@@ -6,7 +6,7 @@ function JoinMta() {
     <div>
       <Meta title="Join MTA" favicon="/favicon.ico" />
 
-      <PageHeader heading="Join MTA" />
+      {/* <PageHeader heading="Join MTA" /> */}
 
       <div className="w-[90%] mx-auto md:w-2/3">
         <p className="mb-4">

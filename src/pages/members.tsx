@@ -1,25 +1,34 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import MemberAvatar from "@/components/MemberAvatar";
 import PageHeader from "@/components/PageHeader";
-import { useServices } from "@/hooks/useServices";
+import { supabaseClient } from "@/config/supabase";
 import Meta from "@/meta/meta";
-import { boardOfDirectorsType } from "@/types/service";
 import { useEffect, useState } from "react";
 
 function Members() {
-  const [boardOfDirectorsList, setBoardOfDirectorsList] =
-    useState<Array<boardOfDirectorsType>>();
-  const [membersList, setMembersList] = useState<Array<boardOfDirectorsType>>();
-  const [crew, setCrew] = useState<Array<boardOfDirectorsType>>();
-
-  const { getBoardOfDirectorsList, getMembersList, getCrewList } =
-    useServices();
+  const [allMemberList, setAllMemberList] = useState<
+    {
+      designation: string;
+      designation_order: number;
+      member_type: string;
+      name: string;
+      profile_image: string;
+      insta_username: string;
+    }[]
+  >([]);
 
   useEffect(() => {
-    getBoardOfDirectorsList().then(setBoardOfDirectorsList);
-    getMembersList().then(setMembersList);
-    getCrewList().then(setCrew);
+    getData();
   }, []);
+
+  const getData = async () => {
+    let { data: members, error } = await supabaseClient
+      .from("members")
+      .select(
+        "designation,designation_order,member_type,name,profile_image,member_type,insta_username"
+      );
+    setAllMemberList(members as any);
+  };
 
   return (
     <div>
@@ -37,17 +46,18 @@ function Members() {
         </div>
 
         <div className="flex flex-row flex-wrap gap-10">
-          {boardOfDirectorsList
+          {allMemberList
+            ?.filter((member) => member.member_type === "Board Member")
             ?.slice()
-            .sort((a, b) => a.order - b.order)
+            .sort((a, b) => a.designation_order - b.designation_order)
             .map((obj) => (
               <div key={obj.name} className="flex justify-center">
                 <MemberAvatar
-                  instagram_handle={obj.userName}
+                  instagram_handle={obj.insta_username}
                   name={obj.name}
-                  profile_url={obj.profileImage?.url}
+                  profile_url={obj.profile_image}
                   designation={obj.designation}
-                  ridePatches={obj.ridePatches}
+                  ridePatches={[]}
                 />
               </div>
             ))}
@@ -59,36 +69,35 @@ function Members() {
         </div>
 
         <div className="flex ">
-          {crew?.map((obj) => (
-            <div key={obj.name}>
-              <MemberAvatar
-                instagram_handle={obj.userName}
-                name={obj.name}
-                profile_url={obj.profileImage?.url}
-                designation={obj.designation}
-                ridePatches={obj.ridePatches}
-              />
-            </div>
-          ))}
+          {allMemberList
+            ?.filter((member) => member.member_type === "Ride Crew")
+            ?.map((obj) => (
+              <div key={obj.name}>
+                <MemberAvatar
+                  instagram_handle={obj.insta_username}
+                  name={obj.name}
+                  profile_url={obj.profile_image}
+                  designation={obj.designation}
+                  ridePatches={[]}
+                />
+              </div>
+            ))}
         </div>
 
         {/* MEMBERS */}
         <div className="text-3xl md:text-4xl font-semibold my-10 ">MEMBERS</div>
 
         <div className="flex flex-row flex-wrap gap-10">
-          {membersList
+          {allMemberList
+            ?.filter((member) => member.member_type === "Member")
             ?.slice()
-            ?.sort(
-              (a, b) =>
-                (b.ridePatches?.length || 0) - (a.ridePatches?.length || 0)
-            )
             ?.map((obj) => (
               <div key={obj.name}>
                 <MemberAvatar
-                  instagram_handle={obj.userName}
+                  instagram_handle={obj.insta_username}
                   name={obj.name}
-                  profile_url={obj.profileImage?.url}
-                  ridePatches={obj.ridePatches}
+                  profile_url={obj.profile_image}
+                  ridePatches={[]}
                 />
               </div>
             ))}

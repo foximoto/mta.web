@@ -49,7 +49,7 @@ function CommunityWallItems() {
   return (
     <div className="container mx-auto pb-10">
       <Meta title="Rides" favicon="/favicon.ico" />
-      <PageHeader heading={data?.event_name || ""} />
+      {/* <PageHeader heading={data?.event_name || ""} /> */}
       <div className="flex">
         <img
           src={data?.cover_image}

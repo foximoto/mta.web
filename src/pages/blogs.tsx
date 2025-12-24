@@ -25,7 +25,7 @@ function Blogs() {
       <Meta title="Blogs" favicon="/favicon.ico" />
 
       <PageHeader
-        headingFirst="Blog & "
+        headingFirst="Blogs & "
         headingSecond="Resources"
         description="Expert touring tips, safety guides, and rider knowledge"
       />
@@ -42,7 +42,7 @@ function Blogs() {
                   className={`text-white mr-4 bg-[#2a2a2a] px-4 py-2 ${
                     type === selectedRideType ? "bg-red-700" : ""
                   }`}
-                  onClick={() => setSelectedRideType(type)}
+                  onClick={() => setSelectedRideType(type as any)}
                 >
                   {type}
                 </button>

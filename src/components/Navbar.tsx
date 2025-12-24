@@ -37,7 +37,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-black text-white shadow-sm">
+    <header className="w-full bg-black text-white shadow-sm sticky top-0 z-30">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Left side: brand */}
@@ -89,7 +89,7 @@ export default function Navbar() {
                     </ul>
                   </li>
                 ) : (
-                  <li key={(link.href ?? link.label) as string}>
+                  <li key={(link.href || link.label) as string}>
                     <Link href={link.href as string}>
                       <button className="px-4 py-2 text-gray-700 font-semibold hover:text-white">
                         {link.label}
@@ -164,7 +164,7 @@ export default function Navbar() {
                 </div>
               ) : (
                 <Link
-                  key={(link.href ?? link.label) as string}
+                  key={(link.href || link.label) as string}
                   href={link.href as string}
                   onClick={() => setOpen(false)}
                 >

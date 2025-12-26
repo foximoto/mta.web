@@ -106,6 +106,7 @@ function Footer() {
             foximoto
           </a>
         </span>
+        <Link href="/changelog">Changelog</Link>
       </div>
     </footer>
   );

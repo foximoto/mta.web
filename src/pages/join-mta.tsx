@@ -6,9 +6,9 @@ function JoinMta() {
     <div>
       <Meta title="Join MTA" favicon="/favicon.ico" />
 
-      {/* <PageHeader heading="Join MTA" /> */}
+      <PageHeader headingFirst="Join" headingSecond="MTA" description="" />
 
-      <div className="w-[90%] mx-auto md:w-2/3">
+      <div className="w-[90%] mx-auto md:w-2/3 py-20">
         <p className="mb-4">
           Hello, <br /> Thank you for your interest in joining the Motorcycle
           Tourers Association. First, it should be known that we are NOT a

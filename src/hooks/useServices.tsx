@@ -6,6 +6,7 @@ import {
   getBlogListQuery,
   getCalendarQuery,
   getEventsQuery,
+  getMemberAchievementListQuery,
   getPartnersQuery,
   hallOfFameListQuery,
   membersList,
@@ -14,10 +15,11 @@ import {
   rideListQuery,
   singleBlogQuery,
 } from "@/query/service";
-import { HYGRAPH_ENDPOINT } from "../../env";
 import axios from "axios";
+import { HYGRAPH_ENDPOINT } from "../../env";
 
 export const useServices = () => {
+  const HYGRAPH_ENDPOINT = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "";
   const getHallOfFameList = async () => {
     const response = await axios.get(
       `${HYGRAPH_ENDPOINT}?query=${hallOfFameListQuery}`
@@ -114,6 +116,13 @@ export const useServices = () => {
     return response.data?.data;
   };
 
+  const getAchievementForUser = async (username: string) => {
+    const response = await axios.get(
+      `${HYGRAPH_ENDPOINT}?query=${getMemberAchievementListQuery(username)}`
+    );
+    return response.data?.data;
+  };
+
   return {
     getHallOfFameList,
     getRideList,
@@ -129,5 +138,6 @@ export const useServices = () => {
     getPartnersList,
     getSingleCommunityWallPost,
     getSingleEvent,
+    getAchievementForUser,
   };
 };

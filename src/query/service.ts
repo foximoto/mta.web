@@ -39,9 +39,6 @@ export const membersList = (memberName: string) => {
     bio,
     designation,
     userName,
-    ridePatches(first:1000) {
-      url
-    },
     polarstepUrl
   }
   }
@@ -74,7 +71,13 @@ blogs(where:{slug:"${slug}"}){
   coverImage{
     url
   }
-    author
+  authorDetails{
+      name,
+      profileImage{
+        url
+      },
+      userName
+    }
 }
 }
   `);
@@ -89,10 +92,7 @@ export const boardOfDirectorsQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation,
- ridePatches(first:1000) {
-      url
-    }
+  designation
 }
 }
 `);
@@ -105,10 +105,7 @@ export const crewQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation,
-  ridePatches(first:1000) {
-      url
-    }
+  designation
 }
 }
 `);
@@ -121,10 +118,7 @@ export const membersQuery = encodeURIComponent(`
   profileImage{
     url
   }
-  designation,
-  ridePatches(first:1000) {
-      url
-    }
+  designation
 }
 }
 `);
@@ -167,7 +161,12 @@ export const getBlogListQuery = () => {
     coverImage{
       url
     }
-    author,
+    authorDetails{
+      name,
+       profileImage{
+        url
+      },
+    }
     slug
   }
 }
@@ -217,5 +216,47 @@ export const eventsDetailsQuery = (slug: string) => {
       
       }
     }
+  `);
+};
+
+export const achievementForUserQuery = (username: string) => {
+  return encodeURIComponent(`
+  query {
+  achievements(where: { riderName: { userName: "${username}" } }) {
+    rideName
+    rideDetails {
+      rideName
+      rideLogo {
+        url
+      }
+      slug
+    }
+    rideImage {
+      id
+    }
+  }
+}
+
+  `);
+};
+
+export const getMemberAchievementListQuery = (username: string) => {
+  return encodeURIComponent(`
+ query {
+  achievements(where: { riderName: { userName: "${username}" } }) {
+    rideName
+    rideDetails {
+      rideName
+      rideLogo {
+        url
+      }
+      slug
+    }
+    rideImage {
+      url
+    }
+  }
+}
+
   `);
 };

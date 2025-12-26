@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
+import { supabaseClient } from "@/config/supabase";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { hallOfFamesType } from "@/types/service";
@@ -15,38 +14,49 @@ const CommunityWall = () => {
   const { getHallOfFameList } = useServices();
 
   useEffect(() => {
-    getHallOfFameList().then((response) => {
-      setHallOfFames(response);
-    });
+    // getHallOfFameList().then((response) => {
+    //   setHallOfFames(response);
+    // });
+    getData();
   }, []);
 
+  const getData = async () => {
+    let { data: community_wall, error } = await supabaseClient
+      .from("community_wall")
+      .select("title,slug,cover_image, description");
+    setHallOfFames(community_wall as any);
+  };
   return (
-    <div className="container mx-auto">
-      <Meta title="Community Wall" favicon="/favicon-home.ico" />
-      <Navbar />
-      <PageHeader heading="Community Wall" />
+    <div>
+      <Meta title="Community Wall" favicon="/favicon.ico" />
+      <PageHeader
+        headingFirst="Community"
+        headingSecond="Wall"
+        description="Stories, experiences, and adventures from our riding family"
+      />
 
-      <div className="flex flex-wrap space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
-        {[...(hallOfFames ?? [])].reverse().map((i) => (
-          <Link href={`/community-wall/${i?.slug}`} key={i.id}>
-            <div className=" max-h-[600px] w-full flex-shrink-0 cursor-pointer">
-              <div className="card rounded-none bg-base-100 shadow-lg">
-                <figure>
-                  <img
-                    className="w-full h-[300px] object-cover"
-                    src={i?.coverImage?.url}
-                    alt="hall of fame"
-                  />
-                </figure>
-                <div className="card-body h-[200px]">
-                  <h3 className="card-title">{i?.title}</h3>
+      <div className="container mx-auto py-20">
+        <div className="flex flex-wrap space-x-4 md:space-x-0 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-4 mb-4">
+          {[...(hallOfFames ?? [])].reverse().map((i) => (
+            <Link href={`/community-wall/${i?.slug}`} key={i.id}>
+              <div className=" max-h-[600px] w-full flex-shrink-0 cursor-pointer">
+                <div className="card rounded-none bg-[#121212] shadow-lg">
+                  <figure>
+                    <img
+                      className="w-full h-[300px] object-cover"
+                      src={i?.cover_image}
+                      alt="hall of fame"
+                    />
+                  </figure>
+                  <div className="card-body h-[200px]">
+                    <h3 className="card-title">{i?.title}</h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -1,31 +1,14 @@
 export type rideListType = {
-  data: {
-    ridesList: {
-      rideName: string;
-      rideLogo: {
-        url: string;
-      };
-      slug: string;
-      order: number;
-      type: string;
-    }[];
-  };
+  ride_logo: string;
+  ride_name: string;
+  ride_type: string;
+  slug: string;
+  description: string;
 };
 
 export type rideDetailsType = {
-  rideName: string;
-  rideLogo: {
-    url: string;
-  };
-  slug: string;
-  details: string;
-  registrationOpen: boolean;
-  completedRiders: {
-    name: string;
-    year: string;
-    location: string;
-    motorcycle: string;
-  }[];
+  description: string;
+  ride_name: string;
 };
 
 export type boardOfDirectorsType = {
@@ -47,13 +30,10 @@ export type calendarDataType = {
 };
 
 export type eventsDataType = {
-  eventName: string;
-  date: string;
-  coverImage: {
-    url: string;
-  };
-  description: string;
+  cover_image: string;
+  event_name: string;
   slug: string;
+  date: string;
 };
 
 export type memberDetailsType = {
@@ -74,10 +54,7 @@ export type memberDetailsType = {
 export type hallOfFamesType = {
   id: string;
   title: string;
-  coverImage: {
-    id: string;
-    url: string;
-  };
+  cover_image: string;
   description?: string;
   slug?: string;
 };

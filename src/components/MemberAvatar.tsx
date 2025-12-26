@@ -12,7 +12,7 @@ interface Props {
   }[];
 }
 
-const MemberAvatar: FC<Props> = ({
+const ProfileCard: FC<Props> = ({
   instagram_handle,
   name,
   profile_url,
@@ -20,44 +20,53 @@ const MemberAvatar: FC<Props> = ({
   ridePatches,
 }) => {
   return (
-    <div>
-      <Link href={`profile/${instagram_handle}`} id="RouterNavLink">
-        <div className="flex flex-col justify-center items-center">
+    <Link href={`profile/${instagram_handle}`} id="RouterNavLink">
+      <div className="group w-[200px] bg-[#121212]  shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer">
+        {/* Image */}
+        <div className="w-full h-48 bg-gray-100">
           <img
             src={profile_url || "/placeholder.png"}
-            className="avatar w-40 h-40 rounded-full object-cover"
-            alt=""
+            alt={name}
+            className="w-full h-full object-cover"
           />
-          <div className="text-xl font-semibold">{name}</div>
-          <div className="text-sm font-semibold">{designation}</div>
-          <div className="flex items-center justify-center mt-2 gap-1">
-            <img src="/icons/instagram.svg" className="w-4 h-4" alt="" />
-            <div className="text-xs">{instagram_handle}</div>
-          </div>
-          <div>
-            {ridePatches?.length > 0 && (
-              <>
-                {ridePatches?.slice(0, 5).map((obj) => (
-                  <img
-                    key={obj.url}
-                    src={obj.url}
-                    alt="ride patch"
-                    className="w-6 h-6 inline-block object-contain mx-0.5"
-                  />
-                ))}
-
-                {ridePatches?.length > 5 && (
-                  <span className="ml-1 text-sm font-medium">
-                    +{ridePatches?.length - 5}
-                  </span>
-                )}
-              </>
-            )}
-          </div>
         </div>
-      </Link>
-    </div>
+
+        {/* Content */}
+        <div className="px-4 py-4 text-center">
+          <h3 className="text-lg font-semibold text-white">{name}</h3>
+
+          {designation && (
+            <p className="text-sm text-gray-500 mt-1">{designation}</p>
+          )}
+
+          {/* Instagram */}
+          <div className="flex items-center justify-center gap-2 mt-1 text-gray-600">
+            <span className="text-xs font-medium">@{instagram_handle}</span>
+          </div>
+
+          {/* Ride Patches */}
+          {ridePatches?.length > 0 && (
+            <div className="flex justify-center items-center mt-4 flex-wrap gap-1">
+              {ridePatches.slice(0, 5).map((patch) => (
+                <img
+                  key={patch.url}
+                  src={patch.url}
+                  alt="Ride Patch"
+                  className="w-6 h-6 object-contain"
+                />
+              ))}
+
+              {ridePatches.length > 5 && (
+                <span className="text-xs font-semibold text-gray-500 ml-1">
+                  +{ridePatches.length - 5}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </Link>
   );
 };
 
-export default MemberAvatar;
+export default ProfileCard;

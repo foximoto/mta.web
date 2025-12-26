@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import { useServices } from "@/hooks/useServices";
+import { supabaseClient } from "@/config/supabase";
 import Meta from "@/meta/meta";
 import { rideDetailsType } from "@/types/service";
 import { useRouter } from "next/router";
@@ -11,30 +9,73 @@ import Markdown from "react-markdown";
 
 function RideDetail() {
   const [rideData, setRideData] = useState<rideDetailsType>();
+  const [riderDetails, setRiderDetails] = useState<
+    {
+      bike: string;
+      home_town: string;
+      member: string;
+      year: number;
+    }[]
+  >();
   const router = useRouter();
-
-  const { getRideDetails } = useServices();
 
   useEffect(() => {
     if (router?.query?.slug) {
       const slug = Array.isArray(router.query.slug)
         ? router.query.slug[0]
         : router.query.slug;
-      getRideDetails(slug).then((response) => {
-        setRideData(response?.data?.rides);
-      });
+
+      getData(slug);
+      getRiderDetails(slug);
     }
   }, [router.isReady, router.query.slug]);
 
+  const getData = async (slug: string) => {
+    const { data, error } = await supabaseClient
+      .from("mta_rides")
+      .select("ride_name, description")
+      .eq("slug", slug);
+
+    setRideData(data?.[0]);
+  };
+
+  const getRiderDetails = async (slug: string) => {
+    let { data, error } = await supabaseClient
+      .from("achievements")
+      .select("bike,home_town,member,year")
+      .eq("ride", slug);
+
+    data && setRiderDetails(data);
+  };
+
+  console.log(
+    rideData?.ride_name
+      ?.split(" ")
+      .slice(0, rideData?.ride_name?.split(" ").length - 1)
+      .join(" ")
+  );
+
   return (
-    <div className="container mx-auto">
-      <Meta title="Rides" favicon="/favicon-home.ico" />
-      <Navbar />
+    <div>
+      <Meta title="Rides" favicon="/favicon.ico" />
+      <PageHeader
+        headingFirst={
+          rideData?.ride_name
+            ?.split(" ")
+            .slice(0, rideData?.ride_name?.split(" ").length - 1)
+            .join(" ") || ""
+        }
+        headingSecond={
+          rideData?.ride_name?.split(" ")[
+            rideData?.ride_name?.split(" ").length - 1
+          ] || ""
+        }
+        description=""
+      />
       {rideData && (
-        <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10">
-          <PageHeader heading={rideData?.rideName} />
+        <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto py-20">
           <div className="markdown">
-            <Markdown>{rideData?.details}</Markdown>
+            <Markdown>{rideData?.description}</Markdown>
           </div>
         </div>
       )}
@@ -58,18 +99,17 @@ function RideDetail() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {rideData?.completedRiders?.map((obj, index) => (
-              <tr className="hover:bg-gray-50" key={obj.name + index}>
-                <td className="px-4 py-2">{obj?.name}</td>
+            {riderDetails?.map((obj, index) => (
+              <tr className="hover:bg-slate-900" key={obj.member + index}>
+                <td className="px-4 py-2">{obj?.member}</td>
                 <td className="px-4 py-2">{obj?.year}</td>
-                <td className="px-4 py-2">{obj?.location}</td>
-                <td className="px-4 py-2">{obj?.motorcycle}</td>
+                <td className="px-4 py-2">{obj?.home_town}</td>
+                <td className="px-4 py-2">{obj?.bike}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <Footer />
     </div>
   );
 }

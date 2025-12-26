@@ -1,17 +1,14 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import Meta from "@/meta/meta";
-import React from "react";
 
 function JoinMta() {
   return (
     <div>
-      <Meta title="Join MTA" favicon="/favicon-home.ico" />
-      <Navbar />
-      <PageHeader heading="Join MTA" />
+      <Meta title="Join MTA" favicon="/favicon.ico" />
 
-      <div className="w-[90%] mx-auto md:w-2/3">
+      <PageHeader headingFirst="Join" headingSecond="MTA" description="" />
+
+      <div className="w-[90%] mx-auto md:w-2/3 py-20">
         <p className="mb-4">
           Hello, <br /> Thank you for your interest in joining the Motorcycle
           Tourers Association. First, it should be known that we are NOT a
@@ -82,8 +79,6 @@ function JoinMta() {
           Contact on Instagram
         </a>
       </div>
-
-      <Footer />
     </div>
   );
 }

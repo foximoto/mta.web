@@ -1,43 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function Spotlight() {
-  const images = [
-    "https://images.pexels.com/photos/5195498/pexels-photo-5195498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/ride-to-nowhere-peng-shi.jpg",
-    "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/3-a-woman-rides-her-motorcycle-on-a-cloudy-summer-day-cavan-images.jpg",
-  ];
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, [images.length]);
-
   return (
-    <div className="container mx-auto">
+    <section className="relative w-full min-h-[70vh] md:min-h-[100vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
       <div
-        className="hero h-[600px]"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${images[currentImageIndex]})`,
-          transition: "background-image 1s ease-in-out",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1762178103168-58472e27126e?q=80&w=2342&auto=format&fit=crop')",
         }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div>
-            <h1 className="mb-5 text-5xl w-2/3 font-bold mx-auto">
-              Welcome to <br /> Motorcycle Tourers Association
-            </h1>
-          </div>
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl px-6 text-center text-white">
+        <h1 className="font-bold leading-tight text-[clamp(2.5rem,6vw,5rem)]">
+          Brotherhood of <br />
+          <span className="text-red-600">The Highways</span>
+        </h1>
+
+        <p className="mt-4 text-[clamp(1rem,2.5vw,1.25rem)] text-gray-200">
+          India&apos;s elite long-distance motorcycling community.
+          <br className="hidden sm:block" />
+          Discipline. Endurance. Adventure.
+        </p>
+
+        {/* CTAs */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          {/* Primary CTA */}
+          <button className="group flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white px-8 sm:px-10 py-4 text-base sm:text-lg font-semibold transition-all duration-300 w-full sm:w-auto">
+            Join MTA
+            <span className="text-xl transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </button>
+
+          {/* Secondary CTA */}
+          <button className="bg-white hover:bg-gray-100 text-black px-8 sm:px-10 py-4 text-base sm:text-lg font-medium transition-colors duration-300 w-full sm:w-auto">
+            Explore Rides
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

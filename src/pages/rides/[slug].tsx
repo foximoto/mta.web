@@ -48,13 +48,32 @@ function RideDetail() {
     data && setRiderDetails(data);
   };
 
-  return (
-    <div className="container mx-auto">
-      <Meta title="Rides" favicon="/favicon.ico" />
+  console.log(
+    rideData?.ride_name
+      ?.split(" ")
+      .slice(0, rideData?.ride_name?.split(" ").length - 1)
+      .join(" ")
+  );
 
+  return (
+    <div>
+      <Meta title="Rides" favicon="/favicon.ico" />
+      <PageHeader
+        headingFirst={
+          rideData?.ride_name
+            ?.split(" ")
+            .slice(0, rideData?.ride_name?.split(" ").length - 1)
+            .join(" ") || ""
+        }
+        headingSecond={
+          rideData?.ride_name?.split(" ")[
+            rideData?.ride_name?.split(" ").length - 1
+          ] || ""
+        }
+        description=""
+      />
       {rideData && (
-        <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto pb-10">
-          {/* <PageHeader heading={rideData?.ride_name} /> */}
+        <div className="w-[90%] md:w-[90%] lg:w-2/3 mx-auto py-20">
           <div className="markdown">
             <Markdown>{rideData?.description}</Markdown>
           </div>
@@ -81,7 +100,7 @@ function RideDetail() {
           </thead>
           <tbody className="divide-y divide-gray-200">
             {riderDetails?.map((obj, index) => (
-              <tr className="hover:bg-gray-50" key={obj.member + index}>
+              <tr className="hover:bg-slate-900" key={obj.member + index}>
                 <td className="px-4 py-2">{obj?.member}</td>
                 <td className="px-4 py-2">{obj?.year}</td>
                 <td className="px-4 py-2">{obj?.home_town}</td>

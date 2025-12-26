@@ -25,5 +25,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.iconTheme": "material-icon-theme",
-  "cSpell.words": ["HYGRAPH", "insta", "Moto", "polarstep", "supabase"]
+  "cSpell.words": [
+    "collab",
+    "collabs",
+    "HYGRAPH",
+    "insta",
+    "Moto",
+    "polarstep",
+    "supabase"
+  ]
 }

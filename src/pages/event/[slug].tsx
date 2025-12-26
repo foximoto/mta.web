@@ -49,8 +49,21 @@ function CommunityWallItems() {
   return (
     <div className="container mx-auto pb-10">
       <Meta title="Rides" favicon="/favicon.ico" />
-      {/* <PageHeader heading={data?.event_name || ""} /> */}
-      <div className="flex">
+      <PageHeader
+        headingFirst={
+          data?.event_name
+            ?.split(" ")
+            .slice(0, data?.event_name?.split(" ").length - 1)
+            .join(" ") || ""
+        }
+        headingSecond={
+          data?.event_name?.split(" ")[
+            data?.event_name?.split(" ").length - 1
+          ] || ""
+        }
+        description=""
+      />
+      <div className="flex py-20">
         <img
           src={data?.cover_image}
           alt=""

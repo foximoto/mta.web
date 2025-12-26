@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 import PageHeader from "@/components/PageHeader";
+import { supabaseClient } from "@/config/supabase";
 import { useServices } from "@/hooks/useServices";
 import Meta from "@/meta/meta";
 import { hallOfFamesType } from "@/types/service";
@@ -13,15 +14,21 @@ const CommunityWall = () => {
   const { getHallOfFameList } = useServices();
 
   useEffect(() => {
-    getHallOfFameList().then((response) => {
-      setHallOfFames(response);
-    });
+    // getHallOfFameList().then((response) => {
+    //   setHallOfFames(response);
+    // });
+    getData();
   }, []);
 
+  const getData = async () => {
+    let { data: community_wall, error } = await supabaseClient
+      .from("community_wall")
+      .select("title,slug,cover_image, description");
+    setHallOfFames(community_wall as any);
+  };
   return (
     <div>
       <Meta title="Community Wall" favicon="/favicon.ico" />
-
       <PageHeader
         headingFirst="Community"
         headingSecond="Wall"
@@ -37,7 +44,7 @@ const CommunityWall = () => {
                   <figure>
                     <img
                       className="w-full h-[300px] object-cover"
-                      src={i?.coverImage?.url}
+                      src={i?.cover_image}
                       alt="hall of fame"
                     />
                   </figure>

@@ -5,7 +5,7 @@ import { Facebook, Instagram } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white border-t-2 border-white/10">
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand */}

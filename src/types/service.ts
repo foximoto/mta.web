@@ -3,6 +3,7 @@ export type rideListType = {
   ride_name: string;
   ride_type: string;
   slug: string;
+  description: string;
 };
 
 export type rideDetailsType = {
@@ -53,10 +54,7 @@ export type memberDetailsType = {
 export type hallOfFamesType = {
   id: string;
   title: string;
-  coverImage: {
-    id: string;
-    url: string;
-  };
+  cover_image: string;
   description?: string;
   slug?: string;
 };

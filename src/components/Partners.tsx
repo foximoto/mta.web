@@ -1,18 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useServices } from "@/hooks/useServices";
+import { supabaseClient } from "@/config/supabase";
 import React, { useEffect, useState } from "react";
 
 function Partners() {
   const [partnerList, setPartnerList] = useState<Array<any>>();
-  const { getPartnersList } = useServices();
 
   useEffect(() => {
-    getPartnersList().then((response) => {
-      setPartnerList(response);
-    });
+    getData();
   }, []);
+
+  const getData = async () => {
+    let { data: collabs, error } = await supabaseClient
+      .from("collabs")
+      .select("logo, url")
+      .eq("collab_type", "partner");
+    setPartnerList(collabs || []);
+  };
 
   return (
     <div className="py-20 bg-[#121212]">
@@ -23,7 +28,7 @@ function Partners() {
             <a href={i?.url || "#"}>
               <div className="w-40 h-40 bg-black flex justify-center items-center">
                 <img
-                  src={i?.logo?.url}
+                  src={i?.logo}
                   className="w-36 h-36 object-contain"
                   alt=""
                 />

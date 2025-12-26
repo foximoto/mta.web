@@ -8,6 +8,7 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import Markdown from "react-markdown";
 
 function Rides() {
   const [rideList, setRideList] = useState<rideListType[]>();
@@ -22,7 +23,7 @@ function Rides() {
   const getData = async () => {
     let { data: mta_rides, error } = await supabaseClient
       .from("mta_rides")
-      .select("slug, ride_name, ride_logo, ride_type")
+      .select("slug, ride_name, ride_logo, ride_type, description")
       .eq("visibility_status", "Published")
       .eq("isPublishable", true);
 
@@ -95,8 +96,7 @@ function Rides() {
                       </h3>
 
                       <p className="text-sm text-gray-300 mt-2 line-clamp-2">
-                        Navigate the golden dunes and ancient forts of
-                        Rajasthan's desert terrain.
+                        <Markdown>{obj?.description}</Markdown>
                       </p>
 
                       {/* Meta Grid */}

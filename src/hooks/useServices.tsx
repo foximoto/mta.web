@@ -19,6 +19,7 @@ import axios from "axios";
 import { HYGRAPH_ENDPOINT } from "../../env";
 
 export const useServices = () => {
+  const HYGRAPH_ENDPOINT = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT || "";
   const getHallOfFameList = async () => {
     const response = await axios.get(
       `${HYGRAPH_ENDPOINT}?query=${hallOfFameListQuery}`

@@ -67,7 +67,7 @@ function Footer() {
             </li>
             <li className="flex gap-3">
               <span className="text-red-500">📞</span>
-              +91 98765 43210
+              +91 9633505455
             </li>
             <li className="flex gap-3">
               <span className="text-red-500">✉️</span>
@@ -102,11 +102,10 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 gap-4">
         <span>
           Developed and Maintained by{" "}
-          <a href="#" className="text-red-700">
+          <a href="https://www.instagram.com/foximoto" className="text-red-700">
             foximoto
           </a>
         </span>
-        <Link href="/changelog">Changelog</Link>
       </div>
     </footer>
   );

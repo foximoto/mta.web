@@ -40,9 +40,9 @@ const JoinMtaHome = () => {
           </Link>
 
           {/* Secondary CTA */}
-          <a href="tel:+919876543210">
+          <a href="tel:+919633505455">
             <button className="px-10 py-4 text-lg font-medium text-white border border-white/40 hover:bg-white hover:text-black transition-all duration-300">
-              Call Us: +91 98765 43210
+              Call Us: +91 9633505455
             </button>
           </a>
         </div>

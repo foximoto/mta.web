@@ -1,3 +1,4 @@
+import { supabaseClient } from "@/config/supabase";
 import { useState } from "react";
 
 const LoginForm = () => {
@@ -6,51 +7,20 @@ const LoginForm = () => {
     password: "",
   });
 
-  const onLogin = () => {
-    //
+  const onLogin = async () => {
+    supabaseClient.auth.signInWithOAuth({ provider: "google" });
   };
 
   return (
-    <div className="pb-10 flex flex-row justify-center">
-      <div className="card bg-base-100 w-96 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">Login to your Account</h2>
-
-          <label className="input">
-            Email
-            <input
-              type="email"
-              className="grow"
-              placeholder="you@example.com"
-              onChange={(e) => {
-                setFormData({ ...formData, email: e.target.value });
-              }}
-            />
-          </label>
-          <label className="input">
-            Password
-            <input
-              type="password"
-              className="grow"
-              placeholder="********"
-              onChange={(e) => {
-                setFormData({ ...formData, password: e.target.value });
-              }}
-            />
-          </label>
-          <div className="card-actions justify-end">
-            <button className="btn btn-block btn-primary" onClick={onLogin}>
-              Login
-            </button>
-          </div>
-          <div role="alert" className="alert alert-info alert-soft">
-            <span>
-              The login is restricted for MTA Members. Please contact the
-              administrator for credentials
-            </span>
-          </div>
-        </div>
-      </div>
+    <div className="py-20 flex justify-center items-center flex-col gap-4">
+      <button
+        onClick={() => {
+          onLogin();
+        }}
+        className="bg-red-700 px-4 py-2"
+      >
+        login with Google
+      </button>
     </div>
   );
 };

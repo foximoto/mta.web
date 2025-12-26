@@ -1,6 +1,1 @@
-export const accountTabItems = [
-  "Rider Info",
-  "Membership",
-  "Payment History",
-  "Settings",
-];
+export const accountTabItems = ["Rider Info", "Settings"];

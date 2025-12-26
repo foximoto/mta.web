@@ -30,7 +30,7 @@ const NAV_LINKS = [
   },
 
   { href: "/shop", label: "Shop" },
-  { href: "/sponsors", label: "Sponsors" },
+  // { href: "/sponsors", label: "Sponsors" },
 ];
 
 export default function Navbar() {

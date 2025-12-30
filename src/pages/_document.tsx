@@ -5,6 +5,10 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <meta
+          name="google-site-verification"
+          content="Uh94OAZ9DPp8IAFNJoyG6ReIajXsQ2qCoKfg7BI46S8"
+        />
         <script
           defer
           src="https://cloud.umami.is/script.js"
